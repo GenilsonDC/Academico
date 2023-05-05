@@ -29,5 +29,3 @@ print('Potenciação: ',potenciacao)
 # radiciação
 raiz= 9**(1/2) #a raiz quadrada seria um número elevado a meio (1/2)
 print("Raiz quadrada: ", raiz)
-
-
