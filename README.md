@@ -9,6 +9,3 @@
 ![React, react native icon - Free download on Iconfinder](https://cdn0.iconfinder.com/data/icons/logos-brands-in-colors/128/react_color-52.png)		![Vue.js - Wikipedia](https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/60px-Vue.js_Logo_2.svg.png)	
 
 ![](https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/97_Docker_logo_logos-52.png)	
-
-![Code, development, logo, mongodb, programming icon - Free download](https://cdn4.iconfinder.com/data/icons/logos-3/512/mongodb-2-122.png)			<img src="https://github.com/GenilsonDC/Academico/blob/main/pngwing.com.png?raw=true" alt="pngwing.com.png" style="zoom:50%;" />
-
