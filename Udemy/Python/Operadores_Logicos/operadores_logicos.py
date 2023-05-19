@@ -13,14 +13,14 @@ else:
 
 print('\n\n')
 
-# or	Retorna True se uma das afirmações for verdadeira 
+# OR	Retorna True se uma das afirmações for verdadeira 
 # Avaliação de Curto Circuito
 print(0 or False or 0 or 'abc' or True,end='\n\n')
 
 senha = input('senha') or 'sem senha'
 print(senha)
 
-# not	retorna Falso se o resultado for verdadeiro ou seja inverte a expressão
+# NOT	retorna Falso se o resultado for verdadeiro ou seja inverte a expressão
 
 if not entrada=='s' and keycehck == key:
     print('vc não digitou s')
