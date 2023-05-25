@@ -7,3 +7,4 @@ if procura in nome:
 else:
     print(f'{procura} não esta em {nome}')
     
+    
