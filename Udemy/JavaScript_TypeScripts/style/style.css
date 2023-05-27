@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+/* ------- Home ----------- */
+.Logo {
+  width: 260px;
+}
+#heading {
+  background-color: #f86b79;
+  color: #2d3144;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  width: 100%;
+  height: 77px;
+
+  /* dark */
+  /* background-color: #2d3144; */
+}
+#menuNav ul {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
