@@ -1,0 +1,31 @@
+table {
+  border-collapse: collapse;
+  /* Todas as ficam juntas/unidas */
+  width: 50%;
+  min-width: 300px;
+  align-items: center;
+}
+thead {
+  background-color: rgb(64, 129, 145);
+  color: white;
+}
+table td,
+table th {
+  border: 1px solid #051f4b;
+  padding: 3px;
+}
+caption {
+  font-style: italic;
+}
+tfoot {
+  background-color: rgb(167, 99, 166);
+  font-style: italic;
+}
+.Tabela2 thead {
+  background-color: rgb(186, 180, 12);
+  font-style: italic;
+}
+.Tabela2 tfoot {
+  background-color: rgb(4, 161, 22);
+  font-style: italic;
+}
