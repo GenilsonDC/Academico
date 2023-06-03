@@ -16,5 +16,5 @@
 
 ![](https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/97_Docker_logo_logos-52.png)	
 
-![Code, development, logo, mongodb, programming icon - Free download](https://cdn4.iconfinder.com/data/icons/logos-3/512/mongodb-2-122.png)	<img src="https://upload.wikimedia.org/wikipedia/commons/d/d6/%D8%A6%DB%86%D8%B1%D8%A7%DA%A9%DA%B5.png" alt="Oracle (banco de dados) – Wikipédia, a enciclopédia livre" style="zoom:16%;" />
+![Code, development, logo, mongodb, programming icon - Free download](https://cdn4.iconfinder.com/data/icons/logos-3/512/mongodb-2-122.png)	<img 
 
