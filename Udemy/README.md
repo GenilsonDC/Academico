@@ -16,5 +16,5 @@
 
 ![](https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/97_Docker_logo_logos-52.png)	
 
-![Code, development, logo, mongodb, programming icon - Free download](https://cdn4.iconfinder.com/data/icons/logos-3/512/mongodb-2-122.png)	<img 
+![Code, development, logo, mongodb, programming icon - Free download](https://cdn4.iconfinder.com/data/icons/logos-3/512/mongodb-2-122.png)
 
