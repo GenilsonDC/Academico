@@ -1,4 +1,5 @@
 nome = 'Genilson do Carmo'
+print(nome)
 print(nome[4:])
 print(nome[4])
 print(nome[-4])

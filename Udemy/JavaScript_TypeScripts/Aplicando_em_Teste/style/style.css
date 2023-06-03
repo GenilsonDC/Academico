@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+/* ------- Home ----------- */
+.Logo {
+  width: 260px;
+}
+#heading {
+  background-color: #f86b79;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  width: 100%;
+  height: 77px;
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+
+  /* dark */
+  /* background-color: #2d3144; */
+}
+
+#heading ul {
+  color: #2d3144;
+  display: flex;
+}
+
+#menuNav a {
+  color: #2d3144;
+  padding: 0px 20px;
+  text-decoration: none;
+  display: block;
+}
+a :hover {
+  background-color: #f1e901;
+}

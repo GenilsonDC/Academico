@@ -1,6 +1,6 @@
 # aqui o objetivo é receber alguns dados do usuario e fatiar, inverter, procurar, medir
 nome= input('\nDigite seu nome: ')
-idade= input('\nDigite sua idade: ')
+idade= input('\nDigite sua idade: ') #Nao usei, mas posso fazer uma condicao ex: >18 anos
 if nome == '' or idade == '':
     input('\n* * * ALERTA!!! campos vazios * * * ')
 else:
