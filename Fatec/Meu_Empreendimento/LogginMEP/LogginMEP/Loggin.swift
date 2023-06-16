@@ -8,9 +8,9 @@
 import UIKit
 
 class Loggin: UIViewController {
-    var screem: LoginScreen?
+    var screem: LoginScreenView?
     override func loadView() {
-        self.screem =  LoginScreen()
+        self.screem =  LoginScreenView()
         self.view = self.screem
     }
 

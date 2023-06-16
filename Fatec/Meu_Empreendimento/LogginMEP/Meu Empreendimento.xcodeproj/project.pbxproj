@@ -13,7 +13,7 @@
 		24DD59232A2CA7D900B943E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24DD59212A2CA7D900B943E1 /* Main.storyboard */; };
 		24DD59252A2CA7DA00B943E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24DD59242A2CA7DA00B943E1 /* Assets.xcassets */; };
 		24DD59282A2CA7DA00B943E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24DD59262A2CA7DA00B943E1 /* LaunchScreen.storyboard */; };
-		24DD59302A2CAC6300B943E1 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DD592F2A2CAC6300B943E1 /* LoginScreen.swift */; };
+		24DD59302A2CAC6300B943E1 /* LoginScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DD592F2A2CAC6300B943E1 /* LoginScreenView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +25,7 @@
 		24DD59242A2CA7DA00B943E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		24DD59272A2CA7DA00B943E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		24DD59292A2CA7DA00B943E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		24DD592F2A2CAC6300B943E1 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
+		24DD592F2A2CAC6300B943E1 /* LoginScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +65,7 @@
 				24DD59242A2CA7DA00B943E1 /* Assets.xcassets */,
 				24DD59262A2CA7DA00B943E1 /* LaunchScreen.storyboard */,
 				24DD59292A2CA7DA00B943E1 /* Info.plist */,
-				24DD592F2A2CAC6300B943E1 /* LoginScreen.swift */,
+				24DD592F2A2CAC6300B943E1 /* LoginScreenView.swift */,
 			);
 			path = LogginMEP;
 			sourceTree = "<group>";
@@ -142,7 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				24DD59202A2CA7D900B943E1 /* Loggin.swift in Sources */,
-				24DD59302A2CAC6300B943E1 /* LoginScreen.swift in Sources */,
+				24DD59302A2CAC6300B943E1 /* LoginScreenView.swift in Sources */,
 				24DD591C2A2CA7D900B943E1 /* AppDelegate.swift in Sources */,
 				24DD591E2A2CA7D900B943E1 /* SceneDelegate.swift in Sources */,
 			);

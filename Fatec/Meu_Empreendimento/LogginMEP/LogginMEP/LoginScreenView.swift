@@ -1,5 +1,5 @@
 //
-//  LoginScreen.swift
+//  LoginScreenView.swift
 //  Meu Empreendimento
 //
 //  Created by Genilson do Carmo Silva on 04/06/23.
@@ -7,7 +7,8 @@
 
 import UIKit
 
-class LoginScreen: UIView {
+
+class LoginScreenView: UIView {
     // Background image
     lazy var subImageView: UIImageView = {
         let image = UIImageView()
@@ -25,7 +26,7 @@ class LoginScreen: UIView {
     }()
     // Label brand/company
     lazy var meuEmpreedimentoLabel:UILabel = {
-        let label = UILabel()
+        let label = UILabel() 
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .white
         label.font = UIFont.boldSystemFont(ofSize: 35)
@@ -113,7 +114,7 @@ class LoginScreen: UIView {
         let btn = UIView()
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.clipsToBounds = true
-     btn.backgroundColor = UIColor(red: 52/255, green: 52/255, blue: 52/255, alpha: 0.9)
+        btn.backgroundColor = UIColor(red: 52/255, green: 52/255, blue: 52/255, alpha: 0.9)
         btn.layer.borderColor = UIColor(red: 52/255, green: 52/255, blue: 52/255, alpha: 0.7).cgColor
         btn.layer.cornerRadius = 10
         btn.layer.borderWidth = 2
@@ -137,29 +138,54 @@ class LoginScreen: UIView {
     }()
     
     
-//    ######################################################
+    // MARK: - Initialization
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.addSubview(self.subImageView)
-        self.addSubview(self.logoImageVew)
-        self.addSubview(self.meuEmpreedimentoLabel)
-        self.addSubview(self.apresentacaoLabel)
-        self.addSubview(self.logintextField)
-        self.addSubview(self.senhatextField)
-        self.addSubview(self.recuperaSenhabtn)
-        self.addSubview(self.entrarbtn)
-        self.addSubview(self.lineVew)
-        self.addSubview(self.entrarComGooglebtn)
-        self.entrarComGooglebtn.addSubview(self.googleLogoImageView)
-        self.entrarComGooglebtn.addSubview(self.entrarcomLabelView)
-        self.configConstraints()
+        setupViews()
+        configureConstraints()
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: coder)
+       setupViews()
+        configureConstraints()
     }
-    private func configConstraints(){
+    
+    // MARK: - NSCoding
+    
+    override func encode(with coder: NSCoder) {
+        coder.encode(subImageView.image, forKey: "subImageViewImage")
+        coder.encode(logoImageVew.image, forKey: "logoImageVewImage")
+        coder.encode(meuEmpreedimentoLabel.text, forKey: "meuEmpreedimentoLabelText")
+        coder.encode(apresentacaoLabel.text, forKey: "apresentacaoLabelText")
+        coder.encode(logintextField.attributedPlaceholder?.string, forKey: "logintextFieldPlaceholder")
+        coder.encode(senhatextField.attributedPlaceholder?.string, forKey: "senhatextFieldPlaceholder")
+        coder.encode(recuperaSenhabtn.title(for: .normal), forKey: "recuperaSenhabtnTitle")
+        coder.encode(entrarbtn.title(for: .normal), forKey: "entrarbtnTitle")
+        coder.encode(entrarcomLabelView.text, forKey: "entrarcomLabelViewText")
+    }
+    
+
+    
+    // MARK: - Private Methods
+    
+    private func setupViews() {
+        addSubview(subImageView)
+                addSubview(logoImageVew)
+                addSubview(meuEmpreedimentoLabel)
+                addSubview(apresentacaoLabel)
+                addSubview(logintextField)
+                addSubview(senhatextField)
+                addSubview(recuperaSenhabtn)
+                addSubview(entrarbtn)
+                addSubview(lineVew)
+                addSubview(entrarComGooglebtn)
+                entrarComGooglebtn.addSubview(googleLogoImageView)
+                entrarComGooglebtn.addSubview(entrarcomLabelView)
+    }
+    
+    private func configureConstraints(){
         NSLayoutConstraint.activate([
             //    ********* BACKGOUND image da tela Ligin ************************************************
             self.subImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor), //Zerando lado Esquerdo(Leading)
