@@ -3,77 +3,65 @@ import axios from "axios";
 
 function App() {
   const [nome, setNome] = useState("");
-  const [sobrenome, setSobrenome] = useState("");
-  const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
-  const [mensagem, setMensagem] = useState("");
+  const [loginMensagem, setLoginMensagem] = useState("");
 
   const handleNomeChange = (event) => {
     setNome(event.target.value);
-  };
-
-  const handleSobrenomeChange = (event) => {
-    setSobrenome(event.target.value);
-  };
-
-  const handleEmailChange = (event) => {
-    setEmail(event.target.value);
   };
 
   const handleSenhaChange = (event) => {
     setSenha(event.target.value);
   };
 
-  const handleFormSubmit = (event) => {
+  const handleLoginSubmit = (event) => {
     event.preventDefault();
 
-    // Faz uma solicitação POST para o backend Flask
+    // Faz uma solicitação POST para o backend Django para fazer login
     axios
-      .post("http://localhost:5000/signup", {
+      .post("http://localhost:8000/login/", {
         nome: nome,
-        sobrenome: sobrenome,
-        email: email,
         senha: senha,
       })
       .then((response) => {
-        setMensagem(response.data.message);
+        setLoginMensagem(response.data);
       })
       .catch((error) => {
-        setMensagem("Erro ao cadastrar usuário.");
+        setLoginMensagem("Erro ao fazer login.");
       });
   };
 
   return (
     <div className="App">
-      <h1>Cadastro de Usuário</h1>
-      <form onSubmit={handleFormSubmit}>
+      <h1 className="tittle">Login</h1>
+
+      <form onSubmit={handleLoginSubmit}>
         <label>
-          Nome:
-          <input type="text" value={nome} onChange={handleNomeChange} />
-        </label>
-        <br />
-        <label>
-          Sobrenome:
+          Nome de Usuário:
           <input
             type="text"
-            value={sobrenome}
-            onChange={handleSobrenomeChange}
+            value={nome}
+            placeholder="Nome"
+            onChange={handleNomeChange}
           />
         </label>
         <br />
         <label>
-          Email:
-          <input type="text" value={email} onChange={handleEmailChange} />
-        </label>
-        <br />
-        <label>
           Senha:
-          <input type="password" value={senha} onChange={handleSenhaChange} />
+          <input
+            type="password"
+            value={senha}
+            placeholder="Senha"
+            onChange={handleSenhaChange}
+          />
         </label>
         <br />
-        <button type="submit">Cadastrar</button>
+        <button type="submit" className="buttonSubmit">
+          Entrar
+        </button>
       </form>
-      <p>{mensagem}</p>
+
+      <p>{loginMensagem}</p>
     </div>
   );
 }
