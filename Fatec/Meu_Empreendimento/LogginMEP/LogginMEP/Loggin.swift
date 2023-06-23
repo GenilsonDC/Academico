@@ -31,16 +31,16 @@ class Loggin: UIViewController {
     }
 
     @objc private func loginButtonTapped() {
-        guard let username = screen?.logintextField.text,
-              let password = screen?.senhatextField.text else {
+        guard let NOME = screen?.logintextField.text,
+              let SENHA = screen?.senhatextField.text else {
             return
         }
 
         // Crie os componentes de URL para os parâmetros de nome de usuário e senha
         var components = URLComponents()
         components.queryItems = [
-            URLQueryItem(name: "username", value: username),
-            URLQueryItem(name: "password", value: password)
+            URLQueryItem(name: "NOME", value: NOME),
+            URLQueryItem(name: "SENHA", value: SENHA)
         ]
 
         // Obtenha a string de consulta dos componentes de URL
@@ -54,7 +54,7 @@ class Loggin: UIViewController {
         }
 
         // Crie uma solicitação HTTP POST para o endpoint de login
-        guard let url = URL(string: "http://127.0.0.1:8000/login/") else {
+        guard let url = URL(string: "http://localhost:8000/login/") else {
             return
         }
         var request = URLRequest(url: url)

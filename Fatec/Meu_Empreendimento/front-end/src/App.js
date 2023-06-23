@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 
 function App() {
-  const [nome, setNome] = useState("");
-  const [senha, setSenha] = useState("");
+  const [NOME, setNome] = useState("");
+  const [SENHA, setSenha] = useState("");
   const [loginMensagem, setLoginMensagem] = useState("");
 
   const handleNomeChange = (event) => {
@@ -19,9 +19,9 @@ function App() {
 
     // Faz uma solicitação POST para o backend Django para fazer login
     axios
-      .post("http://localhost:8000/login/", {
-        nome: nome,
-        senha: senha,
+      .post("http://localhost:8000/login", {
+        NOME: NOME,
+        SENHA: SENHA,
       })
       .then((response) => {
         setLoginMensagem(response.data);
@@ -40,7 +40,7 @@ function App() {
           Nome de Usuário:
           <input
             type="text"
-            value={nome}
+            value={NOME}
             placeholder="Nome"
             onChange={handleNomeChange}
           />
@@ -50,7 +50,7 @@ function App() {
           Senha:
           <input
             type="password"
-            value={senha}
+            value={SENHA}
             placeholder="Senha"
             onChange={handleSenhaChange}
           />

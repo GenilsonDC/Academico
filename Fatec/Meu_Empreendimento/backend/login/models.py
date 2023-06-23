@@ -1,10 +1,10 @@
 from django.db import models
 
 class Usuarios(models.Model):    
-    nome = models.CharField(max_length=50)
-    sobrenome = models.CharField(max_length=70)
-    email = models.CharField(max_length=100, unique=True)
-    senha = models.CharField(max_length=20)
+    NOME = models.CharField(max_length=50)
+    SOBRENOME = models.CharField(max_length=70)
+    EMAIL = models.CharField(max_length=100, unique=True)
+    SENHA = models.CharField(max_length=20)
 
     def __str__(self):
-        return self.nome + ' ' + self.sobrenome
+        return self.NOME + ' ' + self.SOBRENOME
