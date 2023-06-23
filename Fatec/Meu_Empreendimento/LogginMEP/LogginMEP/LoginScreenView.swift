@@ -53,7 +53,7 @@ class LoginScreenView: UIView {
         txtfld.backgroundColor = UIColor(red: 52/255, green: 52/255, blue: 52/255, alpha: 0.8)
         txtfld.borderStyle = .roundedRect
         txtfld.keyboardType = .emailAddress
-        txtfld.attributedPlaceholder = NSAttributedString(string: "meumail@mail.com", attributes: [NSAttributedString.Key.foregroundColor:UIColor.white.withAlphaComponent(0.4)])
+        txtfld.attributedPlaceholder = NSAttributedString(string: "Nome", attributes: [NSAttributedString.Key.foregroundColor:UIColor.white.withAlphaComponent(0.4)])
         txtfld.textColor = .white
         txtfld.clipsToBounds = true
         txtfld.layer.cornerRadius = 10
@@ -183,7 +183,13 @@ class LoginScreenView: UIView {
                 addSubview(entrarComGooglebtn)
                 entrarComGooglebtn.addSubview(googleLogoImageView)
                 entrarComGooglebtn.addSubview(entrarcomLabelView)
+              
     }
+    
+    
+   
+   
+    
     
     private func configureConstraints(){
         NSLayoutConstraint.activate([

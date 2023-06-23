@@ -1,10 +1,8 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import render, HttpResponse, redirect
 from django.contrib.auth import authenticate, login
 
 def login_view(request):
     if request.method == 'POST':
-        # Aqui você pode lidar com a lógica de autenticação
         nome = request.POST.get('nome')
         senha = request.POST.get('senha')
         
@@ -13,8 +11,8 @@ def login_view(request):
         
         if usuario is not None:
             login(request, usuario)
-            return HttpResponse('Login bem-sucedido')
+            return redirect('home')  # Redirecionar para a página inicial após o login bem-sucedido
         else:
-            return HttpResponse('Credenciais inválidas')
+            return redirect('login')  # Redirecionar de volta para a página de login em caso de credenciais inválidas
     else:
-        return HttpResponse('Página de login')
+        return render(request, 'login.html')  # Renderizar o template de login
