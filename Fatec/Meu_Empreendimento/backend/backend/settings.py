@@ -1,5 +1,6 @@
 
 from django.contrib.sessions.middleware import SessionMiddleware
+from django.middleware import csrf
 
 from pathlib import Path
 
