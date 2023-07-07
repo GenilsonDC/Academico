@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta >
+    <link rel="stylesheet" href="formulario.css" />
+    <title>Fomulario 1</title>
+  </head>
+  <body>
+    <form action="#" method="get" target="_blank" id="Fomulario1">
+      <p class="title">Digite seus dados</p>
+      <p>
+        <label for="formName" >Nome</label>
+        <input
+          type="text"
+          id="formName"
+          name="formName"
+          placeholder="Meu nome / my name"
+          required
+        />
+      </p>
+      <p>
+        <label for="formLastname">Sobrenome</label>
+        <input
+          type="text"
+          id="formLastname"
+          name="formLastname"
+          placeholder="Sobrenome/ last name"
+          required
+        />
+      </p>
+      <p>
+        <label for="dataNasc"> Data de Nascimento </label>
+        <br> <input type="date" id="dataNasc" name="dataNasc" required></br>
+      </p>
+      <p>
+        <label for="email"> E-mail</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="meuemail@email.com"
+          required
+        />
+      </p>
+      <p><label form="senha"> Senha</label>
+        <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+      </p>
+      <p class="subtitle">Você já trabalhou nessa empresa?</p>
+      <p id="radios">
+        <label for="TrabalhouSim">Sim</label>
+        <input type="radio" id="TrabalhouSim" name="Trabalhou" value="sim" required />
+
+        <label for="TrabalhouNao">Não</label>
+        <input type="radio" id="TrabalhouNao" name="Trabalhou" value="nao" required /></p>
+      
+        <p>
+        <label for="curriculo">Upload curriculo</label>
+        <br/>
+        <input type="file" id="curriculo" name="curriculo" accept=".pdf, .docx" required>
+      
+      </p>
+      <p>
+        <button type="reset" id="btnReset">Limpar</button>
+        <button type="submit" id="btnSubmit">Enviar</button>
+      </p>
+    </form>
+  </body>
+</html>
