@@ -8,20 +8,20 @@ p {
   text-indent: 40px;
 }
 .link1 {
-  color: orange;
+  /* color: orange; */
   font-size: larger;
   transition: all 300ms ease-in-out;
+}
+.link1:link {
+  color: rgb(4, 182, 111); /*Links nao visitados*/
+}
+.link1:visited {
+  color: rgb(210, 154, 1);
 }
 .link1:hover {
   background-color: rgba(228, 138, 3, 0.892);
   color: rgb(0, 1, 1);
   text-decoration: none;
-}
-a:link {
-  color: rgb(4, 182, 111); /*Links nao visitados*/
-}
-.link1:visited {
-  color: rgb(141, 0, 122);
 }
 input:focus {
   outline: none;
