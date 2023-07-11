@@ -17,39 +17,88 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" fixedFrame="YES" image="inicio" translatesAutoresizingMaskIntoConstraints="NO" id="lBm-E1-d5I">
-                                <rect key="frame" x="0.0" y="-1" width="393" height="853"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" image="inicio" translatesAutoresizingMaskIntoConstraints="NO" id="lBm-E1-d5I">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pergunte qualquer coisa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U0n-o8-zjB">
-                                <rect key="frame" x="26" y="91" width="341" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Encoste na bola para receber a resposta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1wI-L8-efn">
-                                <rect key="frame" x="6" y="718" width="380" height="27"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="09a-av-vRI">
-                                <rect key="frame" x="26" y="289" width="351" height="392"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" systemColor="systemGroupedBackgroundColor"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title=".">
-                                    <fontDescription key="titleFontDescription" name="Avenir-Book" family="Avenir" pointSize="1"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="btnRespostas:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lIK-wA-wvE"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="azf-xh-sy2">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="px1-ty-nod" userLabel="TopView">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="50"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pergunte qualquer coisa" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U0n-o8-zjB">
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="50"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="U0n-o8-zjB" firstAttribute="leading" relation="lessThanOrEqual" secondItem="px1-ty-nod" secondAttribute="leading" id="3QG-FX-LsN"/>
+                                            <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="U0n-o8-zjB" secondAttribute="trailing" id="5Lt-pY-GAy"/>
+                                            <constraint firstItem="U0n-o8-zjB" firstAttribute="top" relation="lessThanOrEqual" secondItem="px1-ty-nod" secondAttribute="top" id="5d1-yN-L4S"/>
+                                            <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="U0n-o8-zjB" secondAttribute="bottom" id="k6Z-4T-6g5"/>
+                                            <constraint firstItem="U0n-o8-zjB" firstAttribute="centerX" relation="lessThanOrEqual" secondItem="px1-ty-nod" secondAttribute="centerX" id="rB8-6R-3ZV"/>
+                                            <constraint firstItem="U0n-o8-zjB" firstAttribute="centerY" relation="lessThanOrEqual" secondItem="px1-ty-nod" secondAttribute="centerY" id="xgz-ip-rOz"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gyi-Pb-vWJ" userLabel="MidleView">
+                                        <rect key="frame" x="0.0" y="51" width="393" height="657"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="09a-av-vRI">
+                                                <rect key="frame" x="0.0" y="129" width="393" height="478"/>
+                                                <color key="tintColor" systemColor="systemGroupedBackgroundColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title=".">
+                                                    <fontDescription key="titleFontDescription" name="Avenir-Book" family="Avenir" pointSize="1"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="btnRespostas:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lIK-wA-wvE"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="09a-av-vRI" secondAttribute="bottom" constant="50" id="JTZ-md-s1d"/>
+                                            <constraint firstItem="09a-av-vRI" firstAttribute="top" relation="lessThanOrEqual" secondItem="Gyi-Pb-vWJ" secondAttribute="top" constant="129" id="V1L-sL-5LK"/>
+                                            <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="09a-av-vRI" secondAttribute="trailing" id="nJH-fn-cAd"/>
+                                            <constraint firstItem="09a-av-vRI" firstAttribute="centerX" relation="lessThanOrEqual" secondItem="Gyi-Pb-vWJ" secondAttribute="centerX" id="oGQ-De-YK5"/>
+                                            <constraint firstItem="09a-av-vRI" firstAttribute="leading" relation="lessThanOrEqual" secondItem="Gyi-Pb-vWJ" secondAttribute="leading" id="siu-6G-oE7"/>
+                                            <constraint firstItem="09a-av-vRI" firstAttribute="centerY" relation="lessThanOrEqual" secondItem="Gyi-Pb-vWJ" secondAttribute="centerY" constant="39.5" id="zxP-kr-Aib"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fja-uH-ZpT" userLabel="BottonView">
+                                        <rect key="frame" x="0.0" y="709" width="393" height="50"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Encoste na bola para receber a resposta" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1wI-L8-efn">
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="50"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="1wI-L8-efn" firstAttribute="top" relation="lessThanOrEqual" secondItem="Fja-uH-ZpT" secondAttribute="top" id="QQR-TH-hPJ"/>
+                                            <constraint firstItem="1wI-L8-efn" firstAttribute="leading" relation="lessThanOrEqual" secondItem="Fja-uH-ZpT" secondAttribute="leading" id="fKK-Lg-jZR"/>
+                                            <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="1wI-L8-efn" secondAttribute="bottom" id="l7f-LK-R3x"/>
+                                            <constraint firstItem="1wI-L8-efn" firstAttribute="centerX" relation="lessThanOrEqual" secondItem="Fja-uH-ZpT" secondAttribute="centerX" id="oir-IX-JUa"/>
+                                            <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="1wI-L8-efn" secondAttribute="trailing" id="w7u-Rw-sjy"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="azf-xh-sy2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7hD-4B-1MZ"/>
+                            <constraint firstItem="lBm-E1-d5I" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="NZN-4t-kal"/>
+                            <constraint firstItem="lBm-E1-d5I" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="RRz-5L-vhY"/>
+                            <constraint firstItem="azf-xh-sy2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="RSQ-km-8Jg"/>
+                            <constraint firstItem="azf-xh-sy2" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="RdD-jU-1EL"/>
+                            <constraint firstItem="lBm-E1-d5I" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="hFS-6P-e7a"/>
+                            <constraint firstAttribute="bottom" secondItem="lBm-E1-d5I" secondAttribute="bottom" id="hw0-Nb-VQO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="azf-xh-sy2" secondAttribute="bottom" id="tcb-FI-c7u"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="imageFundo" destination="lBm-E1-d5I" id="4lR-E7-2gD"/>

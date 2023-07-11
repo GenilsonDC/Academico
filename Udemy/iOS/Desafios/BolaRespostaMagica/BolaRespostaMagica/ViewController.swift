@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var imageFundo: UIImageView!
     
     @IBAction func btnRespostas(_ sender: UIButton) {
-        let randomRespostas = [#imageLiteral(resourceName: "yes"), #imageLiteral(resourceName: "no"), #imageLiteral(resourceName: "é sim"), #imageLiteral(resourceName: "later"), #imageLiteral(resourceName: "misterio"), #imageLiteral(resourceName: "irineu")]
+        let randomRespostas = [#imageLiteral(resourceName: "yes"), #imageLiteral(resourceName: "no"), #imageLiteral(resourceName: "é sim"), #imageLiteral(resourceName: "misterio"), #imageLiteral(resourceName: "irineu")]
         
         imageFundo.image = randomRespostas.randomElement()
     }
