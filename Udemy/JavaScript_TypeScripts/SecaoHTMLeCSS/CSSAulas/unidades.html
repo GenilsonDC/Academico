@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="HTML e CSS Unidades de medida" />
+    <meta name="keywords" content="html, css, javaScript, TypeScript" />
+    <meta name="author" content="Genilson do Carmo" />
+    <link rel="stylesheet" href="unidades.css" />
+    <title>Unidades de medida CSS</title>
+  </head>
+  <body>
+    <div class="pai">
+    <nav>
+        <a href="#first"> Cor 1</a>
+        <a href="#second"> Cor 2</a>
+        <a href="#third"> Cor 3</a>
+    </nav>
+    <h1>Unidades de medida CSS</h1>
+    
+        <p>
+        Lista
+        <a href="https://www.w3schools.com/cssref/css_units.php" target="_blank">
+            clique e acesse</a
+        >
+        <p>O navegador tem uma medida de 16px ja por padrão, mas se comporta de maneira relativa as 
+            configuracoes de tamanho da fonte  do navegador. <br>
+         veremos algumas da medidas mais utilizadas seu comportamento</p> 
+        </p>
+        <p>
+            <h2>Comprimentos absolutos</h2>
+            As unidades de comprimento absoluto são fixas e um comprimento expresso em 
+            qualquer um deles aparecerá exatamente com esse tamanho.        
+            Unidades de comprimento absoluto não são recomendadas para uso na tela,
+            porque os tamanhos de tela variam muito. No entanto, eles podem ser usados 
+            ​​se a mídia de saída for conhecida, como para layout de impressão.
+        </p>
+        <p>
+            <ul>
+            <li><strong>px - pixels</strong> (1px = 1/96th of 1in) </li>
+            
+        </ul>
+        pixels é a unidade mais utilizda.
+        </p>
+
+     <h2>
+            Comprimentos Relativos
+        </h2>
+            As unidades de comprimento relativo especificam um comprimento relativo a outra propriedade de comprimento.
+            As unidades de comprimento relativo escalam melhor entre diferentes meios de renderização.
+            <p>
+                <ul>
+                    <li><strong>em -  Relative to the font-size of the element</strong> (2em means 2 times the size of the current font)</li>
+                    <p>O em vai se basear na medida do pai mais priximo, no caso a div pai tem 50px então <br>
+                        oparagrafo p = <b>1em = 50px </b> da div pai</p><br>
+                        p = <b>0.25em = 12.5px </b>.
+                    <li><strong>rem - Relative to font-size of the root element</strong></li>
+                    <p>O rem se basea no elemento root, no caso vai ser o <b>html</b>, 50px então <br>
+                        oparagrafo p = <b>1em = 50px </b> da div pai
+                    </p><br>
+                        p = <b>0.25rem = 12.5px </b>.
+                    <li><strong>vw - Relativo a 1% da largura do viewport*</strong></li>
+                    <li><strong>vh - Relativo a 1% da altura do viewport*</strong></li>
+                </ul>
+                <br>
+                <b>O vh é mais interessante, e temos aqui um exemplo de tres divs osupando 100% de cada "seção"da pagina<br>
+                Veja o exemplo abaixo</b><br><br>
+
+                <div id="first" class="cor1">
+                <nav>
+                        <a href="#" > Home</a>
+                        <a href="#second"> Cor 2</a>
+                        <a href="#third"> Cor 3</a>
+                    </nav>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Corrupti asperiores dignissimos quaerat animi eveniet? Omnis commodi,
+                     laborum atque porro, ea sapiente quod officia recusandae id quidem doloribus 
+                     voluptatem voluptatibus quam?
+                     Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                     Corrupti asperiores dignissimos quaerat animi eveniet? Omnis commodi,
+                      laborum atque porro, ea sapiente quod officia recusandae id quidem doloribus 
+                      voluptatem voluptatibus quam?
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                      Corrupti asperiores dignissimos quaerat animi eveniet? Omnis commodi,
+                       laborum atque porro, ea sapiente quod officia recusandae id quidem doloribus 
+                       voluptatem voluptatibus quam?Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                       Corrupti asperiores dignissimos quaerat animi eveniet? Omnis commodi,
+                        laborum atque porro, ea sapiente quod officia recusandae id quidem doloribus 
+                        voluptatem voluptatibus quam?Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Corrupti asperiores dignissimos quaerat animi eveniet? Omnis commodi,
+                         laborum atque porro, ea sapiente quod officia recusandae id quidem doloribus 
+                         voluptatem voluptatibus quam?Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                         Corrupti asperiores dignissimos quaerat animi eveniet? Omnis commodi,
+                          laborum atque porro, ea sapiente quod officia recusandae id quidem doloribus 
+                          voluptatem voluptatibus quam?</div>
+                <div id="second" class="cor2"> 
+                    <nav>
+                        <a href="#first"> Cor 1</a>
+                        <a href="#"> Home</a>
+                        <a href="#third"> Cor 3</a>
+                    </nav>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Corrupti asperiores dignissimos quaerat animi eveniet? Omnis commodi,
+                     laborum atque porro, ea sapiente quod officia recusandae id quidem doloribus 
+                     voluptatem voluptatibus quam?Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                     Corrupti asperiores dignissimos quaerat animi eveniet? Omnis commodi,
+                      laborum atque porro, ea sapiente quod officia recusandae id quidem doloribus 
+                      voluptatem voluptatibus quam?Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                      Corrupti asperiores dignissimos quaerat animi eveniet? Omnis commodi,
+                       laborum atque porro, ea sapiente quod officia recusandae id quidem doloribus 
+                       voluptatem voluptatibus quam?Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                       Corrupti asperiores dignissimos quaerat animi eveniet? Omnis commodi,
+                        laborum atque porro, ea sapiente quod officia recusandae id quidem doloribus 
+                        voluptatem voluptatibus quam?Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Corrupti asperiores dignissimos quaerat animi eveniet? Omnis commodi,
+                         laborum atque porro, ea sapiente quod officia recusandae id quidem doloribus 
+                         voluptatem voluptatibus quam?Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                         Corrupti asperiores dignissimos quaerat animi eveniet? Omnis commodi,
+                          laborum atque porro, ea sapiente quod officia recusandae id quidem doloribus 
+                          voluptatem voluptatibus quam?</div>
+                <div id="third" class="cor3" >
+                    
+                    <nav>
+                        <a href="#first"> Cor 1</a>
+                        <a href="#second"> Cor 2</a>
+                        <a href="#"> Home</a>
+                    </nav>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Corrupti asperiores dignissimos quaerat animi eveniet? Omnis commodi,
+                     laborum atque porro, ea sapiente quod officia recusandae id quidem doloribus 
+                     voluptatem voluptatibus quam?Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                     Corrupti asperiores dignissimos quaerat animi eveniet? Omnis commodi,
+                      laborum atque porro, ea sapiente quod officia recusandae id quidem doloribus 
+                      voluptatem voluptatibus quam?Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                      Corrupti asperiores dignissimos quaerat animi eveniet? Omnis commodi,
+                       laborum atque porro, ea sapiente quod officia recusandae id quidem doloribus 
+                       voluptatem voluptatibus quam?Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                       Corrupti asperiores dignissimos quaerat animi eveniet? Omnis commodi,
+                        laborum atque porro, ea sapiente quod officia recusandae id quidem doloribus 
+                        voluptatem voluptatibus quam?Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Corrupti asperiores dignissimos quaerat animi eveniet? Omnis commodi,
+                         laborum atque porro, ea sapiente quod officia recusandae id quidem doloribus 
+                         voluptatem voluptatibus quam?Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                         Corrupti asperiores dignissimos quaerat animi eveniet? Omnis commodi,
+                          laborum atque porro, ea sapiente quod officia recusandae id quidem doloribus 
+                          voluptatem voluptatibus quam?</div>
+
+            </p>
+</div>
+    
+      <footer id="foot">
+       
+          Hellooo... ✨ I'm looking for first DEV iOS or back - front
+          Opportunity<br /><br />
+          👑 Genilson do Carmo<br />
+          2023
+        
+      </footer>
+    
+    <a class="backToTop" href="#">⇧</a>
+  </body>
+</html>
