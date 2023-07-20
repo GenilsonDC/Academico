@@ -7,16 +7,23 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
     
     @IBOutlet weak var topTitleLabel: UILabel!
     
-    let pontoGema = ["Soft": 300, "Média": 480, "Dura": 720]
+    @IBOutlet weak var progresBar: UIProgressView!
+    
+    let pontoGema = ["Soft": 3, "Média": 5, "Dura": 7]
     var timer = Timer()
+    var totaltimer = 0
+    var segundosPassados = 0
+    var player: AVAudioPlayer!
     
     
     @IBAction func eggPointSelect(_ sender: UIButton) {
+        
         UIView.animate(withDuration: 0.3){
             sender.alpha = 0.3
         }
@@ -25,22 +32,36 @@ class ViewController: UIViewController {
                 sender.alpha = 1
             }
         }
-       
-        timer.invalidate()
+        
+        func playSound(){
+            let url = Bundle.main.url(forResource: "alarm_sound", withExtension: "mp3")
+            player = try! AVAudioPlayer(contentsOf: url!)
+            player.play()
+        }
+
         let escolha = sender.currentTitle!
-        var resultado = pontoGema[escolha]!
+        totaltimer = pontoGema[escolha]!
+        
+        progresBar.progress = 0.0
+        segundosPassados = 0
+        topTitleLabel.text = escolha
+        timer.invalidate()
+    
+       
         
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true){
             (timer) in
-            if resultado >= 0{
-               
-                print(resultado,"s")
-                resultado -= 1
-
-            }
+            if self.segundosPassados < self.totaltimer {
+                self.segundosPassados += 1
+                self.progresBar.progress = Float(self.segundosPassados) / Float( self.totaltimer)
+                
+              
+               }
             else{
+                playSound()
                 timer.invalidate()
-                self.topTitleLabel.text = "Pronto!"
+                self.topTitleLabel.text = "Pronto! \nVamos comer 🥚🧂"
+                playSound()
             }
         }
         
