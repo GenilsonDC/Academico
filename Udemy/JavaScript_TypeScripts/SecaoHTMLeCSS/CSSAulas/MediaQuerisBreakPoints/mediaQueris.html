@@ -1,0 +1,90 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="HTML e CSS Media Queries e breakpoints" />
+    <meta name="keywords" content="html, css, javaScript, TypeScript" />
+    <meta name="author" content="Genilson do Carmo" />
+    <link rel="stylesheet" href="mediaQueris.css" />
+    <title>Media Queries e breakpoints</title>
+  </head>
+  <body>
+        <div class="grid">
+                <div class="coluna">
+                    <div class="col-content">Genilson</div>
+                </div>
+                <div class="coluna">
+                    <div class="col-content">Genilson</div>
+                </div>
+                <div class="coluna">
+                    <div class="col-content">Genilson</div>
+                </div>
+                <div class="coluna">
+                    <div class="col-content">Genilson</div>
+                </div>
+                <div class="coluna">
+                    <div class="col-content">Genilson</div>
+                </div>
+                <div class="coluna">
+                    <div class="col-content">Genilson</div>
+                </div>
+        </div>
+        
+        <h2>O que são as Media Queries?</h2>
+        <p>
+            
+            É uma regra na CSS que te possibilita incluir um bloco de propriedades se, e somente, se uma determinada condição for verdadeira.
+            
+            Como estamos falando de <strong>mobile first</strong>  e o desafio em lidar com os diferentes tamanhos de tela, fazemos uso esse método para enfrentar o problema.
+            
+            Ou seja, um conjunto de regras CSS serão aplicadas se uma condição baseada em tamanhos for verdadeira.
+            
+            Desta forma, aplicamos especificidades para os celulares, tablets e desktops, por exemplo.
+        </p>
+        <p>
+            <h2>O que são os Breakpoints?</h2>
+            <p>Os breakpoints, literalmente falando, são pontos de interrupção.
+
+            Analisando pelo contexto da CSS, Media Query e Mobile First, 
+            são os pontos que a interface do usuário será adaptada para a nova realidade do tamanho de tela,
+            ou densidade de pixels, por exemplo.
+            
+            Para ser ainda mais específico, todos os dispositivos móveis tem duas orientações de tela:
+            landscape (modo paisagem) ou portrait (modo retrato).
+            
+            Logo, a medida que o usuário vira o celular o tamanho da tela aumenta, ou diminui,
+            assim temos dois breakpoints diferentes e podemos ajustar os elementos na interface de acordo.
+            </p>
+        
+        </p>
+        <p>
+            Os breakpoints mais utilizados
+            Abaixo um guia com os tamanhos comumente utilizados como breakpoints.
+            <ul><li>@media (min-width:320px) { <i> smartphones, portrait iPhone, portrait 480x320 phones (Android) </i>}</li>
+            <li>@media (min-width:480px) { <i> smartphones, Android phones, landscape iPhone </i>}</li>
+            <li>@media (min-width:600px) { <i>portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) </i> }</li>
+            <li>@media (min-width:801px) { <i>tablet, landscape iPad, lo-res laptops ands desktops </i>}</li>
+            <li>@media (min-width:1025px) { <i> big landscape tablets, laptops, and desktops </i>}</li>
+            <li>@media (min-width:1281px) { <i>hi-res laptops and desktops </i> }</li></ul>
+        </p>
+
+
+
+        <footer id="foot">
+        <span class="footDescription">
+            Hellooo... ✨ I'm looking for first DEV iOS or back - front
+            Opportunity<br /><br />
+            👑 Genilson do Carmo<br />
+            2023
+        </span>
+        </footer>
+
+        <a class="backToTop" href="#">⇧</a>
+  
+  </body>
+</html>
