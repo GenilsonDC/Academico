@@ -1,5 +1,8 @@
 {
   "devDependencies": {
     "prettier": "2.8.8"
+  },
+  "dependencies": {
+    "vue": "^3.3.4"
   }
 }
