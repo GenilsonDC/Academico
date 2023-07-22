@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diretivas - VueJS</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- O conteúdo renderizado pelo Vue.js -->
+      <p>
+        Acesse minha rede do {{perfil}}
+        <button><a v-bind:href="docs">Ver Perfil</a></button>
+      </p>
+      <!-- seria <a href="{{docs}}">...</ -->
+      <!-- Mas por usar a diretiva bind passamos a propiedade diretamente e evitamos erros -->
+
+      <p v-once>Nome completo: <span v-text="user"></span></p>
+      <!--o once renderiza somente uma vez e mantem estatico, caso contrario ficaria Genilson-->
+
+      <p>Nome: {{getNome()}}</p>
+      <!--Aqui ja esta reenderizado somente o nome-->
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="diretivas.js"></script>
+  </body>
+</html>
