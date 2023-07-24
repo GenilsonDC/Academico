@@ -14,14 +14,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var progresBar: UIProgressView!
     @IBOutlet weak var trueButton: UIButton!
     @IBOutlet weak var falseButton: UIButton!
-    var numQuestion = 0
-    let quizList = [
-        ["5 + 1 = 6", "Verdadeiro"],
-        ["A Amazon é uma emrpesa brasileira", "Falso"],
-        ["Campo Grande é a capital do Mato Grosso", "Falso" ],
-        ["O trevo da sorte é um trevo de quatro folhas", "Verdadeiro"]
-    ]
     
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,18 +25,23 @@ class ViewController: UIViewController {
     
     @IBAction func btnAnswerPressd(_ sender: UIButton) {
         let userAnswer = sender.currentTitle
-        let actualAnswer = quizList[numQuestion][1]
+//        let actualQuestion = quizList[numQuestion]
+//        let actualAnswer = actualQuestion.answer
+        let actualAnswer = quizList[numQuestion].answer // Dessa forma fica mais curto que o metodo comentado acima
         var acertou = 0
         var errou = 0
         
         if userAnswer == actualAnswer{
             acertou += 1
-            print ( "✅ Acertou 😎")
+            questionLAbel.backgroundColor = UIColor.green.withAlphaComponent(0.5)
+            
         }
         else
         {
             errou += 1
-            print( "❌ Errou 😭")
+            questionLAbel.backgroundColor = UIColor.red.withAlphaComponent(0.5)
+            
+
         }
         
         if numQuestion + 1 < quizList.count {
@@ -52,12 +51,24 @@ class ViewController: UIViewController {
         else{
             numQuestion = 0
         }
-        updateUI()
+        
+        Timer.scheduledTimer(withTimeInterval: 0.23, repeats: false){ [self]_ in
+                    questionLAbel.backgroundColor = UIColor.clear
+       
+                   }
+     updateUI()
+        
     }
     
     
+    
+    
     func   updateUI(){
-        questionLAbel.text = quizList[numQuestion] [0]
+        questionLAbel.text = quizList[numQuestion].text
+        progresBar.progress = Float(quizList.count) / Float(numQuestion)
+        
+       
+      
         
     }
     
