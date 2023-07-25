@@ -18,7 +18,7 @@ pessoa = {
 
 dados_pessoa = {
     'idade': 16,
-    'altura': 1.6,
+    'altura': 1.90,
 }
 
 pessoas_completa = {**pessoa, **dados_pessoa}
@@ -36,13 +36,13 @@ def mostrar_argumentos_nomeados(*args, **kwargs):
         print(chave, valor)
 
 
-# mostrar_argumentos_nomeados(nome='Joana', qlq=123)
+mostrar_argumentos_nomeados("Nao nomeado", 2, 3, 6, nome='Joana', qlq=123)
 # mostrar_argumentos_nomeados(**pessoas_completa)
 
 configuracoes = {  # Exemplo se fosse uma lista de configuracoes
     'arg1': 1,
-    'arg2': 2,
+    'arg2': "Confg 2",
     'arg3': 3,
     'arg4': 4,
 }
-mostrar_argumentos_nomeados(**configuracoes)
+mostrar_argumentos_nomeados(1, 2, 3, **configuracoes)
