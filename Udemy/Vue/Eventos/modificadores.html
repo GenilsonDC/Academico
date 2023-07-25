@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Object event modifies" />
+    <meta name="keywords" content="Vue, VueJS, javaScript, HTML" />
+    <meta name="author" content="Genilson do Carmo" />
+    <title>Modificadores</title>
+  </head>
+
+  <body>
+    <h1>Modificadores de evento</h1>
+  
+    
+       <div id="app">
+      <p v-on:click=" onClick('p', $event)">
+        Clique aqui e afete o p.(<i>Veja no console.log</i>) <br />
+        Clique no botão e este p sera afetado caso nao haja tratamento com .stop
+        <button v-on:click="onClick('button', $event)"  ><b></b> aqui !</button>
+      </p>
+      <form>
+        <label for="nome">Digeite seu nome: </label> </label> <input type="text" id="nome" />
+        <button type="submit" v-on:click="onSubmit"> Enviar <strong>sem</strong> modificador </button>
+        <button type="submit" v-on:click.prevent.stop="onSubmit"> Enviar <strong>com</strong> modificador </button>
+      </form>
+      <br>
+      <p> Lista completa de Modificadores de Evento no site Vue 
+        <button>
+            <a href="https://br.vuejs.org/v2/guide/events.html#Modificadores-de-Evento" target="_blank">
+                 <strong> lista completa</strong></a>
+        </button>
+    </p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="modificadores.js"></script>
+  </body>
+</html>

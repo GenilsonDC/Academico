@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Manupulando Object event" />
+    <meta name="keywords" content="Vue, VueJS, javaScript, HTML" />
+    <meta name="author" content="Genilson do Carmo" />
+    <title>Manipulando Eventos</title>
+  </head>
+  <body>
+    <p>
+      Lista de enventos nativos do DOM/ DOM events
+      <button>
+        <a
+          href="https://developer.mozilla.org/en-US/docs/Web/Events"
+          target="_blank"
+        >
+          aqui/here</a
+        >
+      </button>
+    </p>
+    <div id="app">
+      <p><strong> Eventos v-on:click</strong> </p>
+      <p>
+        <button v-on:click="incrementar"><strong> Clique aqui!</button> </strong> botão clicado
+       <strong> {{cliques}}x</strong> 
+      </p><br>
+      <p v-on:mousemove="atualizaCoordenadas">
+    <strong>  Passe o mouse aqui e veja as coredenadas de X:{{x}} e Y:{{y}}</strong> 
+      </p><br>
+      <p >
+        <strong>Manipulando meus própios argtumentos: </strong> 
+        <p ><label for="nome"> Digite seu nome: <input id="nome" v-on:blur="exibirNome('seu nome é: ', $event)"> {{nome}}</label></p><!--Aqui usamos o $-->
+      </p>
+      <p>Clicke fora da caixa de texto</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="manipulacao.js"></script>
+  </body>
+</html>
