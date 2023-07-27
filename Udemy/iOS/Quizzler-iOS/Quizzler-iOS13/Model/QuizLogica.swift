@@ -16,4 +16,41 @@ struct QuizLogica{
         Question(q: "A França é a capital de Paris", a: "Falso"),
     ]
     var numQuestion = 0
+    var acertos = 0
+    
+    mutating func checkAnswer(_ userAnswer: String) -> Bool{
+        if userAnswer == quizList[numQuestion].answer{
+            acertos += 1
+            return true
+        }
+        else{
+            return false
+        }
+    }
+    
+    func getTextoResposta() -> String{
+        return quizList[numQuestion].text
+    }
+    
+    mutating func proximaPergunta(){
+        if numQuestion + 1 < quizList.count {
+            numQuestion += 1
+            
+        }
+        else{
+            numQuestion = 0
+            acertos = 0
+        }
+    }
+    
+    func getAcertos() -> Int{
+      
+        return acertos
+    }
+    
+    func getProgres() -> Float{
+        let progress = Float(numQuestion ) / Float(quizList.count)
+        return progress
+    }
+    
 }

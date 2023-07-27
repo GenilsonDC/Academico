@@ -26,8 +26,14 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fal-oS-tEg">
                                 <rect key="frame" x="20" y="48" width="374" height="814"/>
                                 <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="scroreLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oJb-Mq-Wao">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="79"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                        <color key="textColor" systemColor="systemOrangeColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="1000" text="Question Text" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rSI-li-mhO">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="609"/>
+                                        <rect key="frame" x="0.0" y="89" width="374" height="520"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -87,6 +93,7 @@
                     </view>
                     <connections>
                         <outlet property="falseButton" destination="tbn-vQ-GyC" id="Wcs-6t-Uf6"/>
+                        <outlet property="pontuacaoLabel" destination="oJb-Mq-Wao" id="yy1-sr-HU7"/>
                         <outlet property="progresBar" destination="TXm-qh-7Xg" id="HnL-XF-VE8"/>
                         <outlet property="questionLAbel" destination="rSI-li-mhO" id="Kzd-04-eQD"/>
                         <outlet property="trueButton" destination="oVw-Hl-IRe" id="VVb-oN-ueP"/>
@@ -100,6 +107,9 @@
     <resources>
         <image name="Background-Bubbles" width="352" height="102"/>
         <image name="Rectangle" width="322" height="68"/>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

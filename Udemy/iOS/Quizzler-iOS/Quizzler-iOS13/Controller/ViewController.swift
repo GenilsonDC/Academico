@@ -10,12 +10,14 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var topButton: UIButton!
+    @IBOutlet weak var pontuacaoLabel: UILabel!
     @IBOutlet weak var questionLAbel: UILabel!
     @IBOutlet weak var progresBar: UIProgressView!
     @IBOutlet weak var trueButton: UIButton!
     @IBOutlet weak var falseButton: UIButton!
     
-   
+    var quizLogica = QuizLogica()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,39 +26,29 @@ class ViewController: UIViewController {
     }
     
     @IBAction func btnAnswerPressd(_ sender: UIButton) {
-        let userAnswer = sender.currentTitle
-//        let actualQuestion = quizList[numQuestion]
-//        let actualAnswer = actualQuestion.answer
-        let actualAnswer = quizList[numQuestion].answer // Dessa forma fica mais curto que o metodo comentado acima
-        var acertou = 0
-        var errou = 0
+        let userAnswer = sender.currentTitle!
+
+        let recebeCertoErrado = quizLogica.checkAnswer(userAnswer)
         
-        if userAnswer == actualAnswer{
-            acertou += 1
+        
+        if recebeCertoErrado { //True or False do Model - QuizLogica
+            
             questionLAbel.backgroundColor = UIColor.green.withAlphaComponent(0.5)
             
         }
         else
         {
-            errou += 1
             questionLAbel.backgroundColor = UIColor.red.withAlphaComponent(0.5)
-            
-
         }
         
-        if numQuestion + 1 < quizList.count {
-            numQuestion += 1
-            
-        }
-        else{
-            numQuestion = 0
-        }
+        quizLogica.proximaPergunta()
+        
         
         Timer.scheduledTimer(withTimeInterval: 0.23, repeats: false){ [self]_ in
-                    questionLAbel.backgroundColor = UIColor.clear
-       
-                   }
-     updateUI()
+            questionLAbel.backgroundColor = UIColor.clear
+            
+        }
+        updateUI()
         
     }
     
@@ -64,11 +56,11 @@ class ViewController: UIViewController {
     
     
     func   updateUI(){
-        questionLAbel.text = quizList[numQuestion].text
-        progresBar.progress = Float(quizList.count) / Float(numQuestion)
+        questionLAbel.text = quizLogica.getTextoResposta()
+        progresBar.progress = quizLogica.getProgres()
+        pontuacaoLabel.text = "Acertos: \(quizLogica.getAcertos())"
         
-       
-      
+        
         
     }
     
