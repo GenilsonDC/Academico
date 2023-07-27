@@ -1,5 +1,5 @@
 {
-  "name": "vue_cli_teste1",
+  "name": "vue-cli1",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "core-js": "^3.8.3",
-    "vue": "^3.2.13"
+    "vue": "^2.6.14"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
@@ -23,6 +23,6 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.1.0",
     "eslint-plugin-vue": "^8.0.3",
-    "vue-cli-plugin-vuetify": "~2.5.8"
+    "vue-template-compiler": "^2.6.14"
   }
 }
