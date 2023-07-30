@@ -41,7 +41,7 @@ class taskController {
   }
   async all(req, res) {
     await taskModel
-      .find({ mac_address: { $in: req.body.mac_address } }) // só tras as tarefas do mac adress do dispositivo
+      .find({ mac_address: { $in: req.params.mac_address } }) // só tras as tarefas do mac adress do dispositivo
       .sort("when") //Organiza por Date
       .then((response) => {
         return res.status(200).json(response);
@@ -112,7 +112,7 @@ class taskController {
     await taskModel
       .find({
         when: { $lt: currentDate },
-        mac_address: { $in: req.body.mac_address },
+        mac_address: { $in: req.params.mac_address },
       })
       .sort("when")
       .then((response) => {
@@ -127,7 +127,7 @@ class taskController {
   async today(req, res) {
     await taskModel
       .find({
-        mac_address: { $in: req.body.mac_address },
+        mac_address: { $in: req.params.mac_address },
         when: { $gte: startOfDay(currentDate), $lte: endOfDay(currentDate) },
       })
       .sort("when")
@@ -143,7 +143,7 @@ class taskController {
   async week(req, res) {
     await taskModel
       .find({
-        mac_address: { $in: req.body.mac_address },
+        mac_address: { $in: req.params.mac_address },
         when: { $gte: startOfWeek(currentDate), $lte: endOfWeek(currentDate) },
       })
       .sort("when")
@@ -159,7 +159,7 @@ class taskController {
   async month(req, res) {
     await taskModel
       .find({
-        mac_address: { $in: req.body.mac_address },
+        mac_address: { $in: req.params.mac_address },
         when: {
           $gte: startOfMonth(currentDate),
           $lte: endOfMonth(currentDate),
@@ -175,11 +175,10 @@ class taskController {
           .json({ error: "⚠️ Não foi possivel encontrar a tarefa!" });
       });
   }
-
   async year(req, res) {
     await taskModel
       .find({
-        mac_address: { $in: req.body.mac_address },
+        mac_address: { $in: req.params.mac_address },
         when: { $gte: startOfYear(currentDate), $lt: endOfYear(currentDate) },
       })
       .sort("when")

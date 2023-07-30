@@ -61,30 +61,19 @@
 		},
 		{
 			"name": "all",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n \"mac_address\": \"11:11:11:11:11:12\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
 				"url": {
-					"raw": "{{URL}}/task/filter/all",
+					"raw": "{{URL}}/task/filter/all/11:11:11:11:11:22",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
 						"task",
 						"filter",
-						"all"
+						"all",
+						"11:11:11:11:11:22"
 					]
 				}
 			},
@@ -147,30 +136,19 @@
 		},
 		{
 			"name": "late",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n \"mac_address\": \"11:11:11:11:11:22\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
 				"url": {
-					"raw": "{{URL}}/task/filter/late",
+					"raw": "{{URL}}/task/filter/late/11:11:11:11:11:22",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
 						"task",
 						"filter",
-						"late"
+						"late",
+						"11:11:11:11:11:22"
 					]
 				}
 			},
@@ -178,30 +156,19 @@
 		},
 		{
 			"name": "today",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n \"mac_address\": \"11:11:11:11:11:22\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
 				"url": {
-					"raw": "{{URL}}/task/filter/today",
+					"raw": "{{URL}}/task/filter/today/11:11:11:11:11:22",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
 						"task",
 						"filter",
-						"today"
+						"today",
+						"11:11:11:11:11:22"
 					]
 				}
 			},
@@ -209,30 +176,19 @@
 		},
 		{
 			"name": "week",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n \"mac_address\": \"11:11:11:11:11:22\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
 				"url": {
-					"raw": "{{URL}}/task/filter/week",
+					"raw": "{{URL}}/task/filter/week/11:11:11:11:11:22",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
 						"task",
 						"filter",
-						"week"
+						"week",
+						"11:11:11:11:11:22"
 					]
 				}
 			},
@@ -240,30 +196,19 @@
 		},
 		{
 			"name": "month",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n \"mac_address\": \"11:11:11:11:11:22\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
 				"url": {
-					"raw": "{{URL}}/task/filter/month",
+					"raw": "{{URL}}/task/filter/month/11:11:11:11:11:22",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
 						"task",
 						"filter",
-						"month"
+						"month",
+						"11:11:11:11:11:22"
 					]
 				}
 			},
@@ -271,30 +216,19 @@
 		},
 		{
 			"name": "year",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n \"mac_address\": \"11:11:11:11:11:22\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
 				"url": {
-					"raw": "{{URL}}/task/filter/year",
+					"raw": "{{URL}}/task/filter/year/11:11:11:11:11:22",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
 						"task",
 						"filter",
-						"year"
+						"year",
+						"11:11:11:11:11:22"
 					]
 				}
 			},
