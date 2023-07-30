@@ -1,0 +1,304 @@
+{
+	"info": {
+		"_postman_id": "e850aa89-3b93-43c3-9b4a-c8584a73a28e",
+		"name": "Task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27713317"
+	},
+	"item": [
+		{
+			"name": "create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"mac_address\": \"11:11:11:11:11:22\",\n  \"type\":1,\n  \"title\": \"Estudar TypeScript\",\n  \"description\": \"Aprender S.O.L.I.D\",\n  \"when\": \"2023-07-30T06:00:00.000\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/task",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"task"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"mac_address\": \"11:11:11:11:11:11\",\n  \"type\":1,\n  \"title\": \"Estudar TypeScript\",\n  \"description\": \"Aprender S.O.L.I.D\",\n  \"when\": \"2023-08-30T06:00:00.000\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/task/64c4f7cbd0ef817d57d9a07c",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"task",
+						"64c4f7cbd0ef817d57d9a07c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "all",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"mac_address\": \"11:11:11:11:11:12\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/task/filter/all",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"task",
+						"filter",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "show",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/task/64c55dc2f97ec8c15e78490f",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"task",
+						"64c55dc2f97ec8c15e78490f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/task/64c4f7f6d0ef817d57d9a07e",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"task",
+						"64c4f7f6d0ef817d57d9a07e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "done",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/task/64c574174d823bbeea53f022/true",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"task",
+						"64c574174d823bbeea53f022",
+						"true"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "late",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"mac_address\": \"11:11:11:11:11:22\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/task/filter/late",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"task",
+						"filter",
+						"late"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "today",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"mac_address\": \"11:11:11:11:11:22\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/task/filter/today",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"task",
+						"filter",
+						"today"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "week",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"mac_address\": \"11:11:11:11:11:22\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/task/filter/week",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"task",
+						"filter",
+						"week"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "month",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"mac_address\": \"11:11:11:11:11:22\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/task/filter/month",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"task",
+						"filter",
+						"month"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "year",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"mac_address\": \"11:11:11:11:11:22\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/task/filter/year",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"task",
+						"filter",
+						"year"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
