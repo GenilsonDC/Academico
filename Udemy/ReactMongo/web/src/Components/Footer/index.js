@@ -5,6 +5,7 @@ function Footer() {
   return (
     <stl.container>
       <span>ToDo - Organize sua vida</span>
+      <span>2023 - Genilson do Carmo</span>
     </stl.container>
   );
 }
