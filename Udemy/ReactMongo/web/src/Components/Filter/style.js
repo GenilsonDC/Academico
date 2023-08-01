@@ -3,13 +3,14 @@ import styled from "styled-components";
 export const container = styled.div`
   width: 160px;
   height: 45px;
-  border-radius: 9px;
+  border-radius: 15px 15px 29px 29px;
+
   background: ${(props) =>
     props.isSelected ? `rgb(21, 211, 210)` : `rgb(1, 11, 40)`};
   padding: 15px;
   box-shadow: 8px 3px 13px -4px rgba(33, 32, 56, 0.4);
 
-  border-bottom: 5px solid rgb(251, 181, 40);
+  border-bottom: 3px solid rgb(251, 181, 40);
   margin: 5px;
   display: flex;
   flex-direction: column;

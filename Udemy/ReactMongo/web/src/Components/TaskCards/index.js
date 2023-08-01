@@ -11,7 +11,7 @@ function TaskCards({ type, title, when }) {
     <stl.container>
       <stl.topCard>
         <img src={typeIcons[type]} alt="Icone da tarefa" />
-        <h2>{title}</h2>
+        <h3>{title}</h3>
       </stl.topCard>
       <stl.bottonCard>
         <strong>{date}</strong>

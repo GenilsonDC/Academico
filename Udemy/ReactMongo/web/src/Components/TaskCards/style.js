@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const container = styled.div`
-  width: 310px;
-  height: 205px;
-  border-radius: 9px;
+  width: 300px;
+  height: 185px;
+  border-radius: 15px 15px 29px 29px;
   color: rgb(41, 45, 40);
   background: rgb(241, 241, 240);
   border-bottom: 5px solid rgba(251, 181, 40, 1);

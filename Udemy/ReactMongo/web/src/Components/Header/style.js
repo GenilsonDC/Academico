@@ -6,18 +6,30 @@ export const container = styled.div`
   background: rgb(1, 11, 40);
   border-bottom: 5px solid orange;
   display: flex;
+
+  button {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
 `;
 
 export const leftSide = styled.div`
   width: 50%;
   height: 45px;
+  color: rgb(191, 191, 191);
+  display: flex;
+
+  h2 {
+    margin: 15px;
+  }
 
   img {
-    width: 110px;
-    height: 46px;
+    width: 45px;
+    height: 45px;
     display: flex;
     align-items: center;
-    padding-left: 10px;
+    /* padding-left: 0px; */
   }
 `;
 
@@ -49,7 +61,7 @@ export const righttSide = styled.div`
       padding: 3px 6px;
       font-size: 1rem;
       font-weight: bold;
-      background: rgb(251, 11, 90);
+      background: rgb(21, 241, 250);
       color: rgb(1, 11, 40);
       border-radius: 50%;
     }
