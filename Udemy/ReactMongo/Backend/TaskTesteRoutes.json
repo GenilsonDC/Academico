@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n \"mac_address\": \"11:11:11:11:11:22\",\n  \"type\":1,\n  \"title\": \"Estudar TypeScript\",\n  \"description\": \"Aprender S.O.L.I.D\",\n  \"when\": \"2023-07-30T06:00:00.000\"\n}",
+					"raw": "{\n \"mac_address\": \"11:11:11:11:11:22\",\n  \"type\":9,\n  \"title\": \"🟠 Estudar Swift\",\n  \"description\": \"MVC e S.O.L.I.D\",\n  \"when\": \"2023-08-12T12:00:00.000\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -39,7 +39,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n \"mac_address\": \"11:11:11:11:11:11\",\n  \"type\":1,\n  \"title\": \"Estudar TypeScript\",\n  \"description\": \"Aprender S.O.L.I.D\",\n  \"when\": \"2023-08-30T06:00:00.000\"\n}",
+					"raw": "{\n \"mac_address\": \"11:11:11:11:11:22\",\n  \"type\":8,\n  \"title\": \"🟩 Estudar Vue\",\n  \"description\": \"Funcitons\",\n  \"when\": \"2023-08-12T12:00:00.000\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -47,13 +47,13 @@
 					}
 				},
 				"url": {
-					"raw": "{{URL}}/task/64c4f7cbd0ef817d57d9a07c",
+					"raw": "{{URL}}/task/64c66df2a0f66dbc5349504a",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
 						"task",
-						"64c4f7cbd0ef817d57d9a07c"
+						"64c66df2a0f66dbc5349504a"
 					]
 				}
 			},
