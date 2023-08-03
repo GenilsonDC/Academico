@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const container = styled.div`
   width: 100%;
   height: 45px;
-  background: rgb(1, 11, 40);
+  background: rgb(11, 40, 89);
   border-bottom: 5px solid orange;
   display: flex;
 
@@ -17,7 +17,7 @@ export const container = styled.div`
 export const leftSide = styled.div`
   width: 50%;
   height: 45px;
-  color: rgb(191, 191, 191);
+  color: rgb(219, 219, 219);
   display: flex;
 
   h2 {

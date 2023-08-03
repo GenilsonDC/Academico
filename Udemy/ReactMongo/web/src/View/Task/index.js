@@ -9,8 +9,27 @@ import typeIcons from "../../Utils/typeIcons";
 import Footer from "../../Components/Footer";
 
 function Task() {
-  const [lateTasks, setLateTasks] = useState();
+  const [id, setId] = useState();
+  const [mac_address, setMacAdress] = useState("11:11:11:11:11:22");
   const [type, setType] = useState();
+  const [lateTasks, setLateTasks] = useState();
+  const [title, setTitle] = useState();
+  const [description, setDescription] = useState();
+  const [date, setDate] = useState();
+  const [done, setDone] = useState(false);
+  const [hour, setHour] = useState();
+
+  async function saveTask() {
+    await api
+      .post("/task", {
+        mac_address,
+        type,
+        title,
+        description,
+        when: `${date}T${hour}:00.000`,
+      })
+      .then(() => alert("✅ Tarefa cadastrada com sucesso"));
+  }
 
   async function lateTasksVerify() {
     await api.get(`/task/filter/late/11:11:11:11:11:22`).then((response) => {
@@ -47,6 +66,8 @@ function Task() {
             <input
               type="text"
               placeholder="Digite o nome da tarefa ou evento"
+              onChange={(e) => setTitle(e.target.value)}
+              value={title}
             ></input>
           </stl.titleTsak>
           <stl.textArea>
@@ -54,6 +75,8 @@ function Task() {
             <textarea
               rows={5}
               placeholder="Descreva os detalhes do evento"
+              onChange={(e) => setDescription(e.target.value)}
+              value={description}
             ></textarea>
           </stl.textArea>
           <stl.titleTsak>
@@ -61,12 +84,37 @@ function Task() {
             <input
               type="date"
               alt="Campo para selecionar a data 31/12/9999"
+              onChange={(e) => setDate(e.target.value)}
+              value={date}
             ></input>
           </stl.titleTsak>
           <stl.titleTsak>
-            <span>Hora 🕑</span>
-            <input type="time" alt="Campo para selecionar a hora"></input>
+            <span>Horário 🕑</span>
+            <input
+              type="time"
+              alt="Campo para selecionar a hora"
+              onChange={(e) => setHour(e.target.value)}
+              value={hour}
+            ></input>
           </stl.titleTsak>
+          <stl.state>
+            <div>
+              <input
+                type="checkbox"
+                alt="Checkbox"
+                checked={done}
+                onChange={() => setDone(!done)}
+                value={done}
+              ></input>
+              <span>Concluído</span>
+            </div>
+            <button type="button">EXCLUIR</button>
+          </stl.state>
+          <stl.btnSave>
+            <button type="button" onClick={saveTask}>
+              SALVAR
+            </button>
+          </stl.btnSave>
         </div>
       </stl.form>
       <Footer />

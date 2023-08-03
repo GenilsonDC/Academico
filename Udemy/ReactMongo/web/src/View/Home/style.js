@@ -33,7 +33,7 @@ export const Toptitle = styled.div`
 
   h1 {
     top: 1.4rem;
-    color: rgb(23, 22, 76);
+    color: rgb(11, 40, 89);
     position: relative;
     background: white;
     padding: 0 20px;
