@@ -2,13 +2,14 @@
 import React, { useState, useEffect } from "react";
 import api from "../../Services/api";
 import * as stl from "./style";
+import { format } from "date-fns";
 
 // ********** Components ***********
 import Header from "../../Components/Header";
 import typeIcons from "../../Utils/typeIcons";
 import Footer from "../../Components/Footer";
 
-function Task() {
+function Task({ match }) {
   const [id, setId] = useState();
   const [mac_address, setMacAdress] = useState("11:11:11:11:11:22");
   const [type, setType] = useState();
@@ -31,6 +32,16 @@ function Task() {
       .then(() => alert("✅ Tarefa cadastrada com sucesso"));
   }
 
+  async function laodTasksDetais() {
+    await api.get(`/task/${match.params.id}`).then((response) => {
+      setType(response.data.type);
+      setTitle(response.data.title);
+      setDescription(response.data.description);
+      setDate(format(new Date(response.data.when), "yyyy-MM-dd"));
+      setHour(format(new Date(response.data.when), "HH:mm"));
+    });
+  }
+
   async function lateTasksVerify() {
     await api.get(`/task/filter/late/11:11:11:11:11:22`).then((response) => {
       setLateTasks(response.data.length);
@@ -39,6 +50,7 @@ function Task() {
 
   useEffect(() => {
     lateTasksVerify();
+    laodTasksDetais();
   }, []);
 
   return (

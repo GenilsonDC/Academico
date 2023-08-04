@@ -1,6 +1,6 @@
 import React from "react";
 import * as stl from "./style";
-
+import { Link } from "react-router-dom";
 import logo from "../../Assets/icoCrown.png";
 import bell from "../../Assets/bell.png";
 
@@ -13,10 +13,10 @@ function Header({ lateTasks, clickedNotification }) {
       </stl.leftSide>
       <stl.righttSide>
         {/* eslint-disable jsx-a11y/anchor-is-valid */}
-        <a href="#">INICIO</a>
+        <Link to="/">INICIO</Link>
         <span className="tabs"></span>
 
-        <a href="#"> NOVA TAREFA</a>
+        <Link to="/task"> NOVA TAREFA</Link>
         <span className="tabs"></span>
 
         <a href="#">SINCRONIZAR CELULAR</a>

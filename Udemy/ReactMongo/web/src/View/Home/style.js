@@ -23,6 +23,10 @@ export const TaskCardsContainer = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   margin: 20px;
+  a {
+    text-decoration: none;
+    color: darkgray;
+  }
 `;
 export const Toptitle = styled.div`
   width: 100%;

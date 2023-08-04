@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
+import { Link, link } from "react-router-dom";
 import api from "../../Services/api";
 import * as stl from "./style";
 
@@ -62,7 +63,9 @@ function Home() {
       </stl.Toptitle>
       <stl.TaskCardsContainer>
         {tasks.map((item) => (
-          <TaskCards type={item.type} title={item.title} when={item.when} />
+          <Link to={`/task/${item._id}`}>
+            <TaskCards type={item.type} title={item.title} when={item.when} />
+          </Link>
         ))}
       </stl.TaskCardsContainer>
       <Footer />
