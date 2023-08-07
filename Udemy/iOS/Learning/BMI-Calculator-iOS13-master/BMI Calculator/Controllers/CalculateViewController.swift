@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class CalculateViewController: UIViewController {
 
     @IBOutlet weak var textLabel: UILabel!
     @IBOutlet weak var heightLabel: UILabel!
@@ -17,6 +17,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var heightSlider: UISlider!
     @IBOutlet weak var slidePeso: UISlider!
     @IBOutlet weak var weightSlider: UISlider!
+    
+ var calculatorLogic = CalculatorLogic()
+    
+  
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -38,11 +43,18 @@ class ViewController: UIViewController {
     @IBAction func calculateBtn(_ sender: UIButton) {
         let altura = heightSlider.value
         let peso = weightSlider.value
-        let imc = peso / (powf(altura, 2))
-        let saida = String(format:"%.2f",imc)
         
-        textLabel.text = "Seu IMC é: \(saida)"
-        
+        calculatorLogic.CalculatorLogic(peso: peso, altura: altura)
+        performSegue(withIdentifier: "goToResult", sender: self)
+    
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToResult"{
+            let destinationVC = segue.destination as! ResultViewController
+            destinationVC.imcResultado = calculatorLogic.getIMCResultado()
+            destinationVC.advertencia = calculatorLogic.getAdvertencia()
+            destinationVC.cores = calculatorLogic.getCores()
+        }
     }
 }
 
