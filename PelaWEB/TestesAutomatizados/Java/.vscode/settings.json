@@ -1,0 +1,8 @@
+{
+  "java.test.config": {
+    "workingDirectory": "${workspaceFolder}",
+    "sourcePath": "src/main/java",
+    "testPath": "src/test/java",
+    "classpath": ["${workspaceFolder}/src/main/java"]
+  }
+}
