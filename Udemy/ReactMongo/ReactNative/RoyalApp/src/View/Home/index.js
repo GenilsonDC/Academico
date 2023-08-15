@@ -1,25 +1,34 @@
 import React, { useState, useEffect } from "react";
-import { View, Text, TouchableOpacity, ScrollView } from "react-native";
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  ScrollView,
+  ActivityIndicator,
+} from "react-native";
 import styles from "./styles";
 // Componentes
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import TaskCard from "../../components/TaskCard";
-
 // API
 import api from "../../Services/api";
 
 export default function Home() {
   const [filter, setFilter] = useState("today");
   const [tasks, setTasks] = useState([]);
+  const [load, setLoad] = useState(false);
+
   async function loadTasks() {
+    setLoad(true);
     await api.get("/task/filter/all/11:11:11:11:11:22").then((response) => {
       setTasks(response.data);
+      setLoad(false);
     });
   }
   useEffect(() => {
     loadTasks();
-  });
+  }, []);
   return (
     <View style={styles.container}>
       <Header showNotification={true} showLeftImage={true} />
@@ -83,9 +92,8 @@ export default function Home() {
         style={styles.content}
         contentContainerStyle={{ alignItems: "center" }}
       >
-        {tasks.map((t) => (
-          <TaskCard cardDone={false} />
-        ))}
+        <ActivityIndicator size={12} color={"#FF4500"} />
+        <TaskCard cardDone={false} />
       </ScrollView>
 
       <Footer icon={"addButton"} />

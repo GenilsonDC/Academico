@@ -12,5 +12,5 @@ server.use("/task", taskRoutes); //  injetando o arquivo de routas
 // });
 
 server.listen(7001, () => {
-  console.log(" 🌐 ✅");
+  console.log(" 📡 ✅");
 });
