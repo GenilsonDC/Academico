@@ -1,17 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
+import { format } from "date-fns";
 import { View, Image, Text, TouchableOpacity } from "react-native";
 import styles from "./styles";
-import iconDefalt from "../../assets/study.png";
-export default function TaskCard({ cardDone }) {
+//icones
+import typeIcons from "../../utils/typeIcons";
+export default function TaskCard({ done, title, when, type }) {
   return (
-    <TouchableOpacity style={[styles.cards, cardDone && styles.cardDone]}>
+    <TouchableOpacity style={[styles.cards, done && styles.done]}>
       <View style={styles.leftCards}>
-        <Image source={iconDefalt} style={styles.cardActivide}></Image>
-        <Text style={styles.cardTitle}>📚Estudar REACT NATIVE</Text>
+        <Image source={typeIcons[type]} style={styles.cardActivide}></Image>
+        <Text style={styles.cardTitle}>{title}</Text>
       </View>
       <View style={styles.rightCards}>
-        <Text style={styles.cardDate}>15/08/2023</Text>
-        <Text style={styles.cardTime}>10:00</Text>
+        <Text style={styles.cardDate}>
+          {format(new Date(when), "dd/MM/yyyy")}
+        </Text>
+        <Text style={styles.cardTime}>{format(new Date(when), "HH:mm")}</Text>
       </View>
     </TouchableOpacity>
   );

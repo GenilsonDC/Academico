@@ -92,8 +92,18 @@ export default function Home() {
         style={styles.content}
         contentContainerStyle={{ alignItems: "center" }}
       >
-        <ActivityIndicator size={12} color={"#FF4500"} />
-        <TaskCard cardDone={false} />
+        {load ? (
+          <ActivityIndicator size={12} color={"#FF4500"} />
+        ) : (
+          tasks.map((t) => (
+            <TaskCard
+              done={false}
+              title={t.title}
+              when={t.when}
+              type={t.type}
+            />
+          ))
+        )}
       </ScrollView>
 
       <Footer icon={"addButton"} />

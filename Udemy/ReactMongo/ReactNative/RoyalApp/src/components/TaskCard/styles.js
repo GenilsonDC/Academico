@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     bottom: -5,
   },
-  cardDone: {
+  done: {
     opacity: 0.2,
     backgroundColor: "#A9A9A9",
   },
