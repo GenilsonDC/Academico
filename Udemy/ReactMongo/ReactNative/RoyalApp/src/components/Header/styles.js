@@ -11,17 +11,18 @@ const styles = StyleSheet.create({
     justifyContent: "flex-end",
   },
   logo: {
-    width: 50,
-    height: 50,
+    width: 65,
+    height: 65,
     alignSelf: "center",
+    bottom: -5,
   },
   notification: {
     position: "absolute",
-    right: 15,
+    right: 10,
   },
   bellImageNotification: {
-    width: 25,
-    height: 30,
+    width: 32,
+    height: 37,
     bottom: 10,
   },
   numbersNotification: {
@@ -46,7 +47,7 @@ const styles = StyleSheet.create({
     width: 40,
     height: 40,
     bottom: 10,
-    left: 3,
+    left: 9,
   },
 });
 export default styles;

@@ -13,25 +13,50 @@ import Footer from "../../components/Footer";
 import TaskCard from "../../components/TaskCard";
 // API
 import api from "../../Services/api";
+// import * as Networrk from "";
 
 export default function Home() {
   const [filter, setFilter] = useState("today");
   const [tasks, setTasks] = useState([]);
   const [load, setLoad] = useState(false);
+  const [lateCount, setLateCount] = useState();
+  const [mac_address, setMac_address] = useState();
+
+  // async function getMac_adress() {
+  //   await Networrk.getMac_adress();
+  // }
 
   async function loadTasks() {
     setLoad(true);
-    await api.get("/task/filter/all/11:11:11:11:11:22").then((response) => {
-      setTasks(response.data);
-      setLoad(false);
+    await api
+      .get(`/task/filter/${filter}/11:11:11:11:11:22`)
+      .then((response) => {
+        setTasks(response.data);
+        setLoad(false);
+      });
+  }
+
+  async function lateVerify() {
+    await api.get(`/task/filter/late/11:11:11:11:11:22`).then((response) => {
+      setLateCount(response.data.length);
     });
+  }
+
+  function Notification() {
+    setFilter("late");
   }
   useEffect(() => {
     loadTasks();
-  }, []);
+    lateVerify();
+  }, [filter]);
   return (
     <View style={styles.container}>
-      <Header showNotification={true} showLeftImage={true} />
+      <Header
+        showNotification={true}
+        showLeftImage={true}
+        pressBellNotification={Notification}
+        late={lateCount}
+      />
 
       <View style={styles.filters}>
         <TouchableOpacity onPress={() => setFilter("all")}>
@@ -86,7 +111,10 @@ export default function Home() {
       </View>
 
       <View style={styles.title}>
-        <Text style={styles.titleText}> TAREFA</Text>
+        <Text style={styles.titleText}>
+          {" "}
+          TAREFAS{filter == "late" && " ATRASADAS"}
+        </Text>
       </View>
       <ScrollView
         style={styles.content}
