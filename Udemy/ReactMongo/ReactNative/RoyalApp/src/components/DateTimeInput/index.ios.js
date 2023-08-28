@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import {
   TouchableOpacity,
   Image,
@@ -12,7 +12,7 @@ import styles from "./styles";
 import iconCalendar from "../../assets/calendar.png";
 import iconClock from "../../assets/clock.png";
 
-export default function ({ type, value, onChange }) {
+export default function ({ type, value, onChange, save }) {
   const [isPickerVisible, setPickerVisible] = useState(false);
   const scrollViewRef = useRef(null);
 
@@ -26,15 +26,22 @@ export default function ({ type, value, onChange }) {
   };
 
   const handleConfirm = (selectedValue) => {
-    if (type === "date" && selectedValue < new Date()) {
-      if (
-        selectedValue.toDateString() === new Date().toDateString() &&
-        selectedValue.getHours() >= new Date().getHours()
-      ) {
+    if (type === "date") {
+      const currentDate = new Date();
+      currentDate.setSeconds(0, 0); // Reset seconds and milliseconds
+
+      if (selectedValue >= currentDate) {
         hidePicker();
         onChange(selectedValue);
+        const formattedDate = format(
+          selectedValue,
+          "yyyy-MM-dd'T'HH:mm:ss.SSS"
+        );
+        save(formattedDate);
       } else {
         scrollViewRef.current.scrollTo({ x: 0, y: 0, animated: true });
+        hidePicker();
+        onChange(value);
       }
     } else {
       hidePicker();
@@ -48,7 +55,7 @@ export default function ({ type, value, onChange }) {
   return (
     <ScrollView ref={scrollViewRef} style={styles.scrollView}>
       <View style={styles.inputContainer}>
-        <TouchableOpacity style={styles.inputTouchble} onPress={showPicker}>
+        <TouchableOpacity style={styles.inputTouchable} onPress={showPicker}>
           <TextInput style={styles.input} editable={false} value={inputValue} />
           <Image
             style={styles.iconTextInput}
@@ -62,8 +69,10 @@ export default function ({ type, value, onChange }) {
             date={value}
             onConfirm={handleConfirm}
             onCancel={hidePicker}
-            minimumDate={type === "time" ? undefined : new Date()} // Impede datas passadas apenas para seleção de data
-            minuteInterval={10} // Intervalo de minutos
+            minimumDate={
+              type === "date" && value < new Date() ? new Date() : undefined
+            }
+            minuteInterval={5} // Intervalo de minutos
           />
         )}
       </View>

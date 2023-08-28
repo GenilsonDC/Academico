@@ -38,13 +38,13 @@ export default function DateTimeInputAndroid({ type, save }) {
   }
 
   return (
-    <TouchableOpacity onPress={selectDataOrHour}>
+    <TouchableOpacity style={styles.inputTouchable} onPress={selectDataOrHour}>
       <TextInput
         style={styles.input}
         placeholder={
           type == "date"
-            ? "Clique aqui para definir a data..."
-            : "Clique aqui para definir a hora..."
+            ? "Clique aqui para definir a data 🗓️"
+            : "Clique aqui para definir a hora 🕗"
         }
         editable={false}
         value={dateTime}
