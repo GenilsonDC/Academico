@@ -37,7 +37,7 @@ export default function ({ type, value, onChange, save }) {
           selectedValue,
           "yyyy-MM-dd'T'HH:mm:ss.SSS"
         );
-        save(formattedDate);
+        // save(formattedDate);
       } else {
         scrollViewRef.current.scrollTo({ x: 0, y: 0, animated: true });
         hidePicker();
