@@ -6,23 +6,27 @@ import styles from "./styles";
 import logo from "../../assets/icoCrown.png";
 import bell from "../../assets/bell.png";
 import qrCode from "../../assets/qrcode.png";
-import backButton from "../../assets/back.png";
+import back from "../../assets/back.png";
 
 export default function header({
   showNotification,
   showLeftImage,
   pressBellNotification,
   late,
+  navigation,
 }) {
+  function Back() {
+    navigation.navigate("Home");
+  }
   return (
     <View style={styles.header}>
       {showLeftImage ? (
-        <TouchableOpacity style={styles.leftIcons}>
+        <TouchableOpacity style={styles.leftIcons} onPress={Back}>
           <Image source={qrCode} style={styles.leftIconsImage} />
         </TouchableOpacity>
       ) : (
         <TouchableOpacity style={styles.leftIcons}>
-          <Image source={backButton} style={styles.leftIconsImage} />
+          <Image source={back} style={styles.leftIconsImage} />
         </TouchableOpacity>
       )}
       <Image source={logo} style={styles.logo} />

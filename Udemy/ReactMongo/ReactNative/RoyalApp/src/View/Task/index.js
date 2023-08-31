@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import * as React from "react";
+
 import {
   View,
   ScrollView,
@@ -17,22 +18,12 @@ import Footer from "../../components/Footer";
 import typeIcons from "../../utils/typeIcons";
 import DateTimeInput from "../../components/DateTimeInput";
 
-export default function Task() {
+export default function Task({ navigation }) {
   const [done, setDone] = useState(false);
-  const [selectedDate, setSelectedDate] = useState(new Date());
-  const [selectedHour, setSelectedHour] = useState(new Date());
-
-  const handleDateChange = (date) => {
-    setSelectedDate(date);
-  };
-
-  const handleHourChange = (hour) => {
-    setSelectedHour(hour);
-  };
 
   return (
     <KeyboardAvoidingView behavior="padding" style={styles.container}>
-      <Header />
+      <Header navigation={navigation} />
 
       <ScrollView style={{ width: "100%" }}>
         <ScrollView horizontal={true}>
@@ -61,18 +52,10 @@ export default function Task() {
         />
 
         {/* DATA */}
-        <DateTimeInput
-          type={"date"}
-          value={selectedDate}
-          onChange={handleDateChange}
-        />
+        <DateTimeInput type={"date"} value={date} onChange={handleDateChange} />
 
         {/* HORA */}
-        <DateTimeInput
-          type={"hour"}
-          value={selectedHour}
-          onChange={handleHourChange}
-        />
+        <DateTimeInput type={"hour"} value={hour} onChange={handleHourChange} />
 
         <View style={styles.inLine}>
           <View style={styles.inputLine}>

@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import * as React from "react";
+import App from "../../../App";
 import {
   View,
   Text,
@@ -6,6 +7,9 @@ import {
   ScrollView,
   ActivityIndicator,
 } from "react-native";
+
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import styles from "./styles";
 // Componentes
 import Header from "../../components/Header";
@@ -13,18 +17,13 @@ import Footer from "../../components/Footer";
 import TaskCard from "../../components/TaskCard";
 // API
 import api from "../../Services/api";
-// import * as Networrk from "";
 
-export default function Home() {
+export default function Home({ navigation }) {
   const [filter, setFilter] = useState("today");
   const [tasks, setTasks] = useState([]);
   const [load, setLoad] = useState(false);
   const [lateCount, setLateCount] = useState();
   const [mac_address, setMac_address] = useState();
-
-  // async function getMac_adress() {
-  //   await Networrk.getMac_adress();
-  // }
 
   async function loadTasks() {
     setLoad(true);
@@ -37,11 +36,15 @@ export default function Home() {
   }
 
   async function lateVerify() {
-    await api.get(`/task/filter/late/11:11:11:11:11:22`).then((response) => {
-      setLateCount(response.data.length);
-    });
+    await api
+      .get(`/task/filter/${filter}/11:11:11:11:11:22`)
+      .then((response) => {
+        setLateCount(response.data.length);
+      });
   }
-
+  function New() {
+    navigation.navigate("Task");
+  }
   function Notification() {
     setFilter("late");
   }
@@ -134,7 +137,7 @@ export default function Home() {
         )}
       </ScrollView>
 
-      <Footer icon={"addButton"} />
+      <Footer icon={"addButton"} onPress={New} />
     </View>
   );
 }
