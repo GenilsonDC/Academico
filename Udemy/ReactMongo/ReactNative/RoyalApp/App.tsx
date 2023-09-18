@@ -23,7 +23,7 @@ const App = () => {
 
 export default App;
 
-//************MANUAL FUNCIONAL*********/
+//************ MANUAL FUNCIONAL *********/
 // export default function App() {
 //   return <Task />;
 // }
