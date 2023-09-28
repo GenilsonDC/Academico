@@ -17,7 +17,7 @@ try:
         password=db_passw
     )
 except psycopg2.Error as e:
-    print(f"Erro ao conectar ao Banco {db_name}:  {e}")
+    print(f"\n\tErro ao conectar ao Banco {db_name}:  {e}")
     exit()
 
 cur = conn.cursor()
@@ -39,10 +39,10 @@ try:
         # Adjust page_size as needed
         execute_values(cur, insert_query, data, page_size=1000)
     conn.commit()
-    print(f"Sucesso! Todos os dados de {table_name} foram carregados")
+    print(f"\n\tSucesso! Todos os dados de {table_name} foram carregados")
 except Exception as e:
     conn.rollback()
-    print("Erro! Não foi possível carregar os dados:", e)
+    print("\n\tErro! Não foi possível carregar os dados:", e)
 finally:
     cur.close()
     conn.close()

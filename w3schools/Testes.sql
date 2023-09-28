@@ -30,9 +30,21 @@ order by customername;
 select * from customers
 where customerid not between 10 and 25;
 
+select * from products
+where price between 10 and 20
+and categoryid not in (1,2,3,4);
+
 select * from customers
 where customername not between 'A' and 'F' -- Caution because this command is used for campar numbers n o strings
 order by customername;
+
+select * from products
+where productname between 'Carnarvon Tigers' AND 'Mozzarella di Giovanni'
+order by productname;
+
+-- BETWEEN Dates Example
+select * from orders
+where orderdate between '1996-07-01' and '1996-07-31';
 
 --NOT IN
 Select * from customers 
@@ -110,5 +122,108 @@ from customers
  order by customerid
  limit(select count(*) * 0.9 from customers);
 
---SQL MIN() and MAX() Functions
+-- SQL IN Operator
+SELECT * FROM Customers
+WHERE Country IN ('Germany', 'France', 'UK');
 
+select * from customers
+where country not in ('Germany', 'France', 'UK');
+
+-- IN (SELECT)
+Select * from customers
+where customerid in (select customerid from orders);
+
+select * from customers
+where customerid not in(select customerid from orders);
+
+-- Alias
+Select customername as "Cliente", address || ', ' || postalcode || ' ' || city || ', ' || country as "Address"
+from customers;
+
+select orders.orderid, orders.orderdate, customers.customername
+from customers, orders
+where customers.customername = 'Around the Horn'
+and customers.customerid = orders.customerid;
+
+select o.orderid, o.orderdate, c.customername
+from customers as c, orders as o
+where c.customername =  'Around the Horn'
+and c.customerid = o.customerid;
+
+-- SQL JOIN
+select o.orderid, c.customername as "Nome Cliente", o.orderdate
+from orders o
+inner join customers c on o.customerid = c.customerid;
+
+select o.orderid, c.customername as "Cliente", s.shippername
+from ((orders o
+	  inner join customers c on o.customerid = c.customerid)
+	 inner join shippers s on o.shipperid = s.shipperid);
+	 
+-- SQL LEFT JOIN Keyword
+select c.customername, o.orderid
+from customers c
+left join orders o on c.customerid = o.customerid
+order by c.customername;
+
+-- SQL RIGHT JOIN Keyword
+select c.customername, o.orderid
+from customers c
+right join orders o on c.customerid = o.customerid
+order by c.customername;
+
+select o.orderid, e.lastname, e.firstname
+from orders o
+right join Employees e on o.employeeid = e.employeeid
+where o.orderid is null
+order by o.orderid;
+
+-- SQL Self Join Example
+SELECT A.CustomerName AS "Client A", B.CustomerName AS "Client B", A.City
+FROM Customers A, Customers B
+WHERE A.CustomerID != B.CustomerID
+AND A.City = B.City
+ORDER BY A.City;
+
+-- SQL UNION Operator
+select city from customers
+union
+select city from suppliers
+order by city;
+
+select city from customers
+union all
+select city from suppliers
+order by city;
+
+--SQL UNION With WHERE
+select city, country from customers
+where country = 'Germany'
+union
+select city, country from suppliers
+where country = 'Germany'
+order by city;
+
+--Another UNION Example
+SELECT 'Customer' AS Type, ContactName, City, Country
+FROM Customers
+UNION
+SELECT 'Supplier', ContactName, City, Country
+FROM Suppliers;
+
+-- SQL SELECT INTO | The SELECT INTO statement copies data from one table into a new table.
+/*
+SELECT *
+INTO newtable [IN externaldb]
+FROM oldtable
+WHERE condition;
+*/
+
+--Copy only some columns into a new table:
+
+/*
+SELECT column1, column2, column3, ...
+INTO newtable [IN externaldb]
+FROM oldtable
+WHERE condition;
+*/
