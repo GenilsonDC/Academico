@@ -1,0 +1,96 @@
+{
+  "info": {
+    "_postman_id": "95bf16ee-9ca1-4949-b653-07d3cf61d4d3",
+    "name": "Fatec TDD 2023",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "17848046"
+  },
+  "item": [
+    {
+      "name": "album",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"Artist 1\",\r\n    \"artistId\": 1,\r\n    \"label\": \"Label 1\",\r\n    \"year\": 2008,\r\n    \"songs\": [\r\n        {\r\n            \"id\": 1,\r\n            \"name\": \"Song 1\"\r\n        },\r\n        {\r\n            \"id\": 2,\r\n            \"name\": \"Song 2\"\r\n        }\r\n    ]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:8080/album",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["album"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "artist",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"Artist 1\",\r\n    \"isGroup\": false,\r\n    \"nationality\": \"USA\",\r\n    \"albums\": []\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:8080/artist",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["artist"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "album",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:8080/album?albumId=1",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["album"],
+          "query": [
+            {
+              "key": "albumId",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "artist",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:8080/artist?artistId=1",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["artist"],
+          "query": [
+            {
+              "key": "artistId",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
