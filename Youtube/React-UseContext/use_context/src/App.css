@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.App{
+  padding: 0 auto;
+  height: 100vh;
+}
+
+.dark-theme,
+.dark-theme a{
+  background-color:#45395f;
+  color: white;
+
+}
