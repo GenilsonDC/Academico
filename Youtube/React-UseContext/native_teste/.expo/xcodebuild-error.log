@@ -1,0 +1,6 @@
+** BUILD FAILED **
+
+
+The following build commands failed:
+	CompileC /Users/genilsondocarmosilva/Library/Developer/Xcode/DerivedData/native_teste-eiefigrocckhkwfactzhhobulkxq/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/RCT-Folly.build/Objects-normal/x86_64/VirtualEventBase.o /Users/genilsondocarmosilva/Git/Academico/Youtube/React-UseContext/native_teste/ios/Pods/RCT-Folly/folly/io/async/VirtualEventBase.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler (in target 'RCT-Folly' from project 'Pods')
+(1 failure)
