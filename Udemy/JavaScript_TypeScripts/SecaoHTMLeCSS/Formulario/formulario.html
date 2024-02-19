@@ -11,9 +11,10 @@
   </head>
   <body>
     <form action="#" method="get" target="_blank" id="Fomulario1">
+      <div class="containder">
       <p class="title">Digite seus dados</p>
       <p>
-        <label for="formName" >Nome</label>
+        <label for="formName" >Nome</label><br>
         <input
           type="text"
           id="formName"
@@ -23,7 +24,7 @@
         />
       </p>
       <p>
-        <label for="formLastname">Sobrenome</label>
+        <label for="formLastname">Sobrenome</label><br>
         <input
           type="text"
           id="formLastname"
@@ -33,11 +34,11 @@
         />
       </p>
       <p>
-        <label for="dataNasc"> Data de Nascimento </label>
-        <br> <input type="date" id="dataNasc" name="dataNasc" required></br>
+        <label for="dataNasc"> Data de Nascimento</label><br>
+         <input type="date" id="dataNasc" name="dataNasc" required>
       </p>
       <p>
-        <label for="email"> E-mail</label>
+        <label for="email"> E-mail</label><br>
         <input
           type="email"
           id="email"
@@ -46,9 +47,10 @@
           required
         />
       </p>
-      <p><label form="senha"> Senha</label>
+      <p><label form="senha"> Senha</label><br>
         <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
       </p>
+    </div>
       <p class="subtitle">Você já trabalhou nessa empresa?</p>
       <p id="radios">
         <label for="TrabalhouSim">Sim</label>
@@ -60,8 +62,7 @@
         <p>
         <label for="curriculo">Upload curriculo</label>
         <br/>
-        <input type="file" id="curriculo" name="curriculo" accept=".pdf, .docx" required>
-      
+        <input type="file" id="curriculo" name="curriculo" accept=".pdf, .docx" required>      
       </p>
       <p>
         <button type="reset" id="btnReset">Limpar</button>

@@ -1,0 +1,201 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+body{
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+/* ------- Home ----------- */
+
+.Logo {
+  width: 260px;
+  margin-right: 20px;
+}
+
+#heading {
+  background-color: #f86b79;
+  font-weight: bold;
+  width: 100%;
+  min-height: 77px;
+  align-items: center;
+  overflow-x: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  
+  
+}
+
+#menuNav {
+  display: flex;  
+}
+#menuNav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  margin: 0 auto;
+}
+
+
+#menuNav ul li {
+  float: left;
+  display: block;
+}
+#menuNav ul li a {
+  display: block;
+  color: #2d3144;
+  text-decoration: none;
+  padding-right: 20px; 
+}
+
+#menuNav li a:hover {
+color: #ffffff;
+transition: all ease-in-out .25s;
+}
+
+
+#grid{ 
+  margin: 0 auto;
+ height: 100%;
+padding-right: 2%;
+}
+
+#grid::after{
+  content: '';
+  display: block;
+  clear: both;
+  padding-bottom: 20px;
+
+}
+
+.imagesgrid{
+  background-color: #030020;
+  box-shadow: 1px 1px 9px 1px #00000073;
+  margin: 10px;
+  border-radius: 10px;
+  display: flex;
+  align-self: center;
+
+}
+
+
+#imagemgrid{
+  display: block;
+  width: 99%;
+  height: 99%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+}
+
+@media all and (min-width: 140px) and (max-width: 639px) {
+  .imagesgrid{
+    width: 100%;
+    height: auto;
+    float: right;
+    }
+    
+}
+@media all and (min-width: 640px) and (max-width: 859px) {
+  .imagesgrid{
+    width: 45%;
+    height: auto;
+    float: right;
+    }
+    
+}
+@media all and (min-width: 860px) and (max-width: 1199px) {
+ 
+  .imagesgrid{
+    width:30.33%;
+    height: auto;
+    float: right;
+
+    }
+    
+}
+@media all and (min-width: 1200px) {
+ .imagesgrid{
+  width: 31.33%;
+    height: auto;
+    float: right;
+
+  }
+    
+}
+
+#initial{
+  background-color: #001629;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+  overflow-y: auto;
+  padding-top: 122px;
+ 
+}
+
+#Cursos{
+  height: 100vh;
+  background-color: #2d3144;
+  color: #ffffff ;
+  padding-top: 80px;
+
+}
+
+#Vestibular{
+  height: 100vh;
+  background-color: #e44a4a;
+  padding-top: 80px;
+
+
+}
+
+#DiretoriaAcademica{
+  height: 100vh;
+  background-color: #e05865;
+  padding-top: 80px;
+
+
+}
+
+#DiretoriaAdministrativa{
+  height: 100vh;
+  background-color:#eb7e89;
+  padding-top: 80px;
+
+
+}
+
+#Biblioteca{
+  height: 100vh;
+  background-color:#fca2ab;
+  padding-top: 80px;
+
+
+
+}
+
+#Alunos{
+  height: 100vh;
+  background-color:#fdcacf;
+  padding-top: 80px;
+
+
+}
+h2{
+  text-align: center;
+}
+p{
+  max-width: 980px;
+  text-indent: 20px;
+  text-align: justify;
+  padding: 20px;
+}
