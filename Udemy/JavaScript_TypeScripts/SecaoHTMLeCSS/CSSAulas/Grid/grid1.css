@@ -1,0 +1,35 @@
+*{
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+}
+body{
+    background-color: wheat;
+}
+.container{
+display: grid;
+gap: 10px;
+margin: 0 auto;
+max-width: 1200px;
+grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)) ;
+
+}
+.container .item{
+background-color: black;
+color: wheat;
+min-height: 100px;
+
+}
+.container .item:nth-child(10){
+background-color: rgb(255, 2, 200);
+grid-column-start: 2;
+grid-column-end: 4;
+grid-row-start: 3;
+grid-row-end: 5;
+
+}
+.container .item:nth-child(17){
+background-color: rgb(2, 183, 255);
+grid-row: span 3;
+grid-column: span 2;
+}
