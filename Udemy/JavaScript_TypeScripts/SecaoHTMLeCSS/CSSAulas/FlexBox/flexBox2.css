@@ -11,11 +11,11 @@
   align-items: flex-start; /* Move/manipula o eixo y / cross axis */
   text-align: center;
   background-color: rgb(59, 23, 178);
-  height: 650px;
+  height: 50vh;
 }
 .flex-item {
   background-color: rgb(157, 157, 157);
-  width: 33.33%x;
+  width: 33.33%;
 }
 
 /* ************** btn Voltar ao Top *********************** */
