@@ -8,7 +8,7 @@ body{
 }
 .container{
 display: grid;
-gap: 10px;
+gap: 10px 22px;
 margin: 0 auto;
 max-width: 1200px;
 grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)) ;
