@@ -5,20 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./Assets/css/styele.css" />
-
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <title>Landing Page</title>
 </head>
 
 <body>
+
+    <input id="mobile-menu" class="mobile-menu" type="checkbox" aria-label="close menu" role="button">
+    <label for="mobile-menu" title="label close menu" class="mobile-menu-label"></label>
     <aside class="menu">
         <div class="main-content menu-content">
-            <h1><a href="#"> Totoro</a></h1>
+            <h1 onclick="getElementById('mobile-menu').checked=false;"><a href="#">Totoro</a></h1>
             <nav>
-                <ul>
+                <ul onclick="getElementById('mobile-menu').checked=false" ;>
                     <li> <a href="#page1">About </a></li>
                     <li> <a href="#page2">Galery</a></li>
                     <li> <a href="#page3">Awards </a></li>
                     <li> <a href="#page4">Film studio </a></li>
+                    <li> <a href="#page5">Contact </a></li>
                 </ul>
             </nav>
         </div>
@@ -66,7 +70,6 @@
                 <div class="gridimages">
                     <img src="https://source.unsplash.com/random/400x400?d6" alt="random image by unsplash">
                 </div>
-
 
 
             </div>
@@ -127,9 +130,38 @@
                 </p>
             </div>
         </section>
+        <section class="sectionpage-darkBlue" id="page5">
+            <div class="page5content">
+                <h2>Send your comment</h2>
+                <fieldset class="form-grid">
+                    <legend class="legend">Send your comment for us</legend>
+                    <div class="form-group">
+                        <label for="first-name">First name</label>
+                        <input type="text" name="first-name" id="first-name" placeholder="Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="last-name">Last name</label>
+                        <input type="text" name="last-name" id="last-name" placeholder="Last Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" name="email" id="email" placeholder="myemail@.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="comment">Comment</label>
+                        <textarea name="comment" id="comment" cols="30" rows="10"
+                            placeholder="Imput your comment for us here."></textarea>
+                        <button type="submit" id="sub-button">Send</button>
+                    </div>
+                </fieldset>
+            </div>
+        </section>
     </div>
-
-
+    <footer class="footer">
+        <p>Thank you for your visit <span>♥</span></p>
+        <p>Royal Tech Serviços e Sistemas <span class="crown">♛</span></p>
+    </footer>
+    <a href="#" class="back-to-top">«</a>
 
 </body>
 
