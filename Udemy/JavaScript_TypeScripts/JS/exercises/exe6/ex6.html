@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMC</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <section class="secao">
+        <h1> IMC</h1>
+        <table class="Tabela1">
+            <caption> Tabela IMC</caption>
+            <thead>
+                <tr>
+                    <th>IMC</th>
+                    <th>Resultado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td> Abaixo de 18.5 </td>
+                    <td> Abaixo do peso </td>
+                </tr>
+                <tr>
+                    <td> 18.5 a 24.5 </td>
+                    <td> Peso normal </td>
+                </tr>
+                <tr>
+                    <td> 25.0 a 29.9 </td>
+                    <td> Sobrepeso </td>
+                </tr>
+                <tr>
+                    <td> 30.0 a 34.9 </td>
+                    <td> Obesidade 1 </td>
+                </tr>
+                <tr>
+                    <td> 35.0 a 39.9 </td>
+                    <td> Obesidade 2 </td>
+                </tr>
+                <tr>
+                    <td> Acima de 40.0 </td>
+                    <td> Obesidade 3 </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="textos"> </div>
+
+        <form action="" class="formulario">
+            <label for="peso">Peso</label>
+            <input type="text" id="peso" class="textsForm" placeholder="Exemplo: 76">
+
+            <label for="altura">Altura em cm</label>
+            <input type="text" id="altura" class="textsForm" placeholder="exemplo: 175">
+
+            <button class="button">CALCULAR</button>
+        </form>
+    </section>
+
+    <script src="./assets/js/main.js"></script>
+</body>
+
+</html>

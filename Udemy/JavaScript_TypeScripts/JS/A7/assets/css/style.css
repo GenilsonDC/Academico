@@ -1,0 +1,82 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(46, 46, 46);
+    color: rgb(226, 253, 253);
+    font-family: sans-serif;
+}
+.secao{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    max-width: 96rem;
+    height: 100vh;
+    margin: 0 auto;
+    margin-top: 5rem;
+}
+.secao p{
+    margin-bottom: 2rem;
+    max-width: 80%;
+}
+.formulario label{
+    margin-left: 1rem;
+}
+
+.formulario input{
+    border: none;
+    padding-left: 1rem;
+    font-size: 1.1rem;
+    color: rgb(192, 0, 166);
+}
+.formulario input:focus{
+    border: 0.25rem solid rgba(4, 232, 248, 0.212);
+}
+
+.formulario{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+.formulario .textsForm{
+  height: 2rem;
+  width: 100%;
+  border-radius: 0.7rem;
+  margin-bottom: 1rem;
+}
+
+
+.formulario .termosCbx label{
+    color: rgb(241, 255, 47);
+
+}
+
+.formulario .termosCbx{
+    margin-top: 3rem;
+    height: 3rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 9rem;  
+}
+
+
+.formulario button{
+    border: none;
+  height: 2.5rem;
+  width: 30rem;
+  border-radius: 1rem;
+  margin-top: 2rem;
+  transition: all 300ms ease-out;
+  align-self: center;
+}
+.formulario button:hover{
+ background-color: rgb(5, 47, 102);
+ color: white;
+ cursor: pointer;
+
+}
