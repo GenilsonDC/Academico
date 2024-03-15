@@ -1,0 +1,24 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(2, 48, 0);
+}
+.text{
+   background-color: rgb(255, 255, 255);
+   color: rgb(145, 145, 145);
+   text-shadow: 0.1rem 0.1rem 0rem   rgb(2, 109, 2);
+   height: 20rem;
+   max-width: 37rem;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   align-items: center;
+   justify-content: center;
+   margin: 3rem auto;
+   border-radius: 1rem;
+   border: 0.3rem rgb(250, 192, 0) inset;
+}
