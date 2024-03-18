@@ -1,0 +1,167 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    color: rgb(226, 253, 253);
+    font-family: sans-serif;
+    font-size: 1.1rem;
+    background-color: rgb(25, 24, 27);
+
+}
+.secao{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    max-width: 50rem;
+    height: 90vh;
+    margin: 0rem auto;
+    margin-top: 3rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: rgb(70, 70, 65);
+    overflow: auto;
+    box-shadow: 0rem 40rem 30rem 0.8rem rgb(65, 40, 94);
+}
+.secao p{
+    margin-bottom: 2rem;
+    max-width: 80%;
+}
+
+
+.formulario input{
+    border: none;
+    padding-left: 1rem;
+    color: rgb(192, 0, 166);
+    font-size: 1.1rem;
+text-align: center;
+}
+.formulario input:focus{
+    border: 0.25rem solid rgba(248, 134, 4, 0.699);
+}
+
+.formulario{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: center;
+}
+.formulario .textsForm{
+  height: 2.5rem;
+  width: 80%;
+  border-radius: 0.7rem;
+  margin-bottom: 1rem;
+}
+
+
+
+
+.formulario .termosCbx{
+    margin-top: 3rem;
+    height: 3rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 9rem;  
+}
+
+
+.formulario button{
+    border: none;
+  height: 2.5rem;
+  width: 20rem;
+  border-radius: 1rem;
+  margin-top: 2rem;
+  transition: all 300ms ease-out;
+  align-self: center;
+  background-color: rgb(145, 64, 125);
+  font-size: 1.1rem;
+
+}
+.formulario button:hover{
+ background-color: rgb(73, 145, 64);
+ color: white;
+ cursor: pointer;
+
+}
+
+
+
+section .textos {
+  display: flex;
+  flex-direction: row;
+  width: 55%;
+  height: 3rem;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+
+}
+
+section .textos .saidajsBlue{
+  background-color: rgb(43, 116, 226);
+  color: white;
+  border-radius: 1rem;
+  padding: 1rem;
+  text-align: center; 
+ }
+section .textos .saidajsOrange{
+  background-color: rgb(248, 187, 55);
+  color: black;
+  border-radius: 1rem;
+  padding: 1rem;
+  text-align: center; 
+ }
+
+ section .textos .saidajsOrangeRed{
+  background-color: rgb(252, 104, 6);
+  color: black;
+  border-radius: 1rem;
+  padding: 1rem;
+  text-align: center; 
+ }
+ section .textos .saidajsRed{
+  background-color: rgb(252, 6, 6);
+  color: black;
+  border-radius: 1rem;
+  padding: 1rem;
+  text-align: center; 
+ }
+
+section .textos .saidajsBlack{
+  background-color: rgb(7, 5, 0);
+  color: red;
+  border-radius: 1rem;
+  padding: 1rem;
+  text-align: center; 
+ }
+
+
+
+table {
+    border-collapse: collapse;
+    min-width: 34rem;
+    align-items: center;
+    margin-bottom: 3rem;
+    text-align: center;
+    box-shadow: 0.1rem 0 15rem 0.21rem black;
+    border-radius: 1rem;
+
+  }
+  thead {
+    background-color: rgb(145, 64, 125);
+    color: white;
+  }
+  table td,
+  table th {
+    padding: 0.3rem;
+  }
+  caption {
+    font-style: italic;
+    padding-top: 3rem;
+  }
+ 
+ 
