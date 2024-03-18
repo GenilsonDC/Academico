@@ -7,10 +7,10 @@
 body{
     background-color: rgb(2, 48, 0);
 }
-.text{
-   background-color: rgb(255, 255, 255);
-   color: rgb(145, 145, 145);
-   text-shadow: 0.1rem 0.1rem 0rem   rgb(2, 109, 2);
+
+
+.texts{
+   background-color: rgb(255, 255, 255);  
    height: 20rem;
    max-width: 37rem;
    display: flex;
@@ -21,4 +21,10 @@ body{
    margin: 3rem auto;
    border-radius: 1rem;
    border: 0.3rem rgb(250, 192, 0) inset;
+}
+
+.texts h1 {
+    color: rgb(0, 66, 6);
+    text-shadow: 0.01rem 0.08rem 0.1rem   rgb(155, 132, 0);
+    font-size: 2rem;
 }
