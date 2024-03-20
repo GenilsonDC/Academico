@@ -1,0 +1,1 @@
+// este é especifico para objetos iteráveis
