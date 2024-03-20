@@ -1,3 +1,4 @@
+// Retorna indice ou chave(string, array etc)
 const lista = ['Alho', 'Tomate', 'Cebola', 'Abacate', 'Banana']
 
 for (let i in lista) {
