@@ -40,7 +40,7 @@ body{
     width: 100%;
     height: 4.8rem;
 }
-.texts .botoes .button {
+.texts .botoes button {
     color: rgb(0, 66, 6);
     text-shadow: 0.1rem 0.08rem 0.1rem   rgb(155, 132, 0);
     font-size: 2rem;
@@ -51,18 +51,18 @@ body{
     border: 0.12em rgb(206, 206, 206) ridge;
     background-color: rgb(253, 251, 231);
 }
-.texts .botoes #btnStart:hover {
+.texts .botoes .btnStart:hover {
     background-color: rgb(0, 132, 255);
 }
 
-.texts .botoes  #btnPause:hover{
+.texts .botoes  .btnPause:hover{
     background-color: rgb(255, 60, 0);
 }
 
-.texts .botoes #btnReset:hover {
+.texts .botoes .btnReset:hover {
     background-color: rgb(87, 87, 87);
 }
-.texts .botoes .button:hover {
+.texts .botoes button:hover {
     color: rgb(255, 255, 255);
 
 }
