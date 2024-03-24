@@ -1,0 +1,92 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    color: rgb(183, 65, 252);
+    font-family: sans-serif;
+    font-size: 1.2rem;
+    background-color: rgb(25, 24, 27);
+
+}
+.secao{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    max-width: 50rem;
+    height: 90vh;
+    margin: 0rem auto;
+    margin-top: 3rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: rgb(70, 70, 65);
+    overflow: auto;
+    box-shadow: 0rem 40rem 30rem 0.8rem rgb(65, 40, 94);
+}
+.secao .texts{   
+  margin-top: 1rem;
+  display: flex; 
+  width: 100%;
+  margin-bottom: 2rem;
+  justify-content: center;
+}
+.secao .lists{
+  color: rgb(165, 253, 0);
+  list-style:lower-greek;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  align-items: end;
+  font-size: 1.5rem;
+
+}
+.secao .lists li{
+  margin-top: 0.5rem;
+  background-color: rgba(5, 3, 0, 0.212);
+  border-radius: 0.9rem;
+}
+
+.secao .texts .input-new-item{
+  height: 3rem;
+  width: 80%;
+  border-radius: 1rem;
+  border: none;
+  font-size: 2rem;
+  color: rgb(65, 40, 94);
+  padding-left: 1rem;
+}
+
+.secao .texts .btn-add{
+  margin-left: 1rem;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50% ;
+  border: inset 0.2rem rgb(97, 182, 0);
+  font-size: 2rem;
+  box-shadow: 0rem 0rem 0.4rem 0.02rem black;
+  transition: all 300ms ease-in-out;
+}
+
+.secao .texts .btn-add:hover{
+  background-color: rgb(97, 182, 0);
+  color: rgb(13, 105, 1);
+ }
+
+ .btnRemove{
+  margin-left: 1rem;
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 50% ;
+  border: inset 0.15rem rgb(255, 0, 76);
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: 0rem 0rem 0.4rem 0.02rem black;
+  transition: all 300ms ease-in-out;
+}
+.btnRemove:hover{
+  background-color: rgb(253, 0, 76);
+  color: white;
+}
