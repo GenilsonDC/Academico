@@ -1,10 +1,15 @@
 function buildCalc() {
     return {
-        display: document.querySelector(".display"),
+        display: document.querySelector('.display'),
 
         startCalc() {
             this.clickButtons();
             this.pushButtonEnter();
+        },
+
+        showInDisplay(capValue) {
+            this.display.focus();
+            this.display.value += capValue;
         },
 
         pushButtonEnter() {
@@ -44,7 +49,7 @@ function buildCalc() {
 
 
         clickButtons() {
-            document.addEventListener("click", (event) => {
+            document.addEventListener('click', (event) => {
                 const element = event.target;
 
                 if (element.classList.contains('btnNum')) {
@@ -53,22 +58,20 @@ function buildCalc() {
                 if (element.classList.contains('btnSimbol')) {
                     this.showInDisplay(element.innerText);
                 }
-                if (element.classList.contains("btnClear")) {
-                    this.clearDisplay();
-                }
-                if (element.classList.contains("btnDel")) {
+                if (element.classList.contains('btnDel')) {
                     this.delOne();
                 }
-                if (element.classList.contains("btnIgual")) {
+                if (element.classList.contains('btnClear')) {
+                    this.clearDisplay();
+                }
+                if (element.classList.contains('btnIgual')) {
                     this.doAccount();
                 }
 
             });
         },
 
-        showInDisplay(capValue) {
-            this.display.value += capValue;
-        }
+
     }
 };
 

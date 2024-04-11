@@ -79,8 +79,15 @@ table tbody .display{
   background-color: rgba(0, 111, 207, 0.384);
 }
 
+
 .btnIgual{
   width: 24.5rem;
+}
+.btnClear{
+  width: 16.2rem;
+}
+.btnDel{
+  width: 16.2rem;
 }
 .btnIgual:hover{
   background-color: rgba(207, 135, 0, 0.493);
