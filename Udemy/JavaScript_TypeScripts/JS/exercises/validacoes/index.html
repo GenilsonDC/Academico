@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validações</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <section class="secao">
+        <h1>Formulário de cadastro</h1>
+        <p>
+        <ul>
+            <li>Preencha todos os campos</li>
+            <li>Preecnha o usuário somente com letras e numeros</li>
+            <li>Preencha o usuário com no minimo 3 até 12 caracteres</li>
+            <li>Senha deve conter de 6 a 12 caracteres</li>
+        </ul>
+        </p>
+
+        <form action="#" class="formulario" method="post">
+            <label for="name">Nome</label>
+            <input type="text" id="name" class="textsForm validar" placeholder="Nome">
+
+            <label for="sobrenome">Sobrenome</label>
+            <input type="text" id="sobrenome" class="textsForm validar" placeholder="Sobrenome">
+
+            <label for="cpf">CPF</label>
+            <input type="text" id="cpf" class="textsForm validar cpf" placeholder="123.321.321-00" autocomplete="off">
+
+            <label for="usuario">Usuário</label>
+            <input type="text" id="usuario" class="textsForm validar usuario" placeholder="meu_usuario">
+
+            <label for="senha">Senha</label>
+            <input type="password" id="senha" class="textsForm validar senha" autocomplete="off">
+
+            <label for="senharepeat">Confirme Senha</label>
+            <input type="password" id="senharepeat" class="textsForm validar senharepeat" autocomplete="off">
+
+            <button type="submit" class="button">Enviar</button>
+        </form>
+    </section>
+
+    <script src="./assets/js/validaCPF.js"></script>
+    <script src="./assets/js/main.js"></script>
+</body>
+
+</html>
