@@ -42,5 +42,3 @@ ValidaCPF.prototype.geraDigito = function (cpfParcial) {
     const digito = 11 - (countRegressivo % 11);
     return digito > 9 ? '0' : String(digito);
 }
-
-const cpf = new ValidaCPF("111.111.111-11");
