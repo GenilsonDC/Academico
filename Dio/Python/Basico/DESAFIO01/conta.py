@@ -1,7 +1,9 @@
 saldo = 0
 deposito = 0
-vs = 0
 saque = 0
+limiteValorSaque = 500
+quantidadeSaque = 3
+
 while True:
     opcao = input(f'''
                 **** Bem vindo ****
@@ -23,17 +25,18 @@ while True:
         print(f"Saldo: {saldo}")
 
     elif opcao == "3":
-        if vs == 3:
+        if quantidadeSaque == 0:
             print(f"\tLimite de 3 saques diarios atingido")
         else:
             saque = float(input(f"\tDigite o valor do saque: "))
-            if saque > 500:
-                print(f"\tSeu limite maximo de saque é de R$:500,00")
+            if saque > limiteValorSaque:
+                print(f"\tSeu limite maximo de saque é de R$:{
+                      limiteValorSaque}")
             elif saldo < saque:
                 print(f"Saldo insuficiente")
             else:
                 saldo -= saque
-                vs += 1
+                quantidadeSaque -= 1
                 print(f'''
                       Saque de R${saque} realizado com sucesso
                       Saldo atual: {saldo}
