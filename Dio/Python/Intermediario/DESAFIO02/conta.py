@@ -34,9 +34,8 @@ def depositar(saldo, deposito, extrato, /):
 def sacar(*, saldo, saque, extrato, limiteValorSaque, limiteQuantidadeSaque):
     excedeu_saldo = saque > saldo
     excedeu_limite = saque > limiteValorSaque
-    excedeu_qttSaques = limiteQuantidadeSaque == 0
 
-    if excedeu_qttSaques:
+    if limiteQuantidadeSaque == 0:
         print(f"\tLimite de 3 saques diarios atingido")
 
     elif excedeu_limite:
@@ -47,17 +46,18 @@ def sacar(*, saldo, saque, extrato, limiteValorSaque, limiteQuantidadeSaque):
 
     elif saque > 0:
         saldo -= saque
-        limiteQuantidadeSaque -= 1
         extrato += f'Saque:__________R${saque:.2f}\n'
         print(f'''
                 Saque de R${saque} realizado com sucesso
                 Saldo atual: {saldo}
                 ''')
+        limiteQuantidadeSaque -= 1
+
     else:
         print(f'''Operação cancelada {saque} não é um valor válido
               , digite valores acima de R$0,00''')
 
-    return saldo, extrato
+    return saldo, extrato, limiteQuantidadeSaque
 
 
 def movimentacoes(saldo, /, *, extrato):
@@ -133,10 +133,8 @@ def main():
 
     while True:
         opcao = opcoes()
-        if opcao == "cs":
-            exibirSaldo(saldo)
 
-        elif opcao == "mv":
+        if opcao == "mv":
             movimentacoes(saldo, extrato=extrato)
 
         elif opcao == "dp":
@@ -146,7 +144,7 @@ def main():
         elif opcao == "sq":
             saque = float(input(f"\tDigite o valor do saque: "))
 
-            saldo, extrato = sacar(
+            saldo, extrato, limiteQuantidadeSaque = sacar(
                 saldo=saldo,
                 saque=saque,
                 extrato=extrato,
