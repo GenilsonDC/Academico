@@ -7,24 +7,30 @@ class Animal:
 
 
 class Mamifero(Animal):
-    def __init__(self, num_patas):
-        super().__init__(num_patas)
-        self.num_patas = num_patas
+    def __init__(self, cor_pelo, **kwargs):
+        super().__init__(**kwargs)
+        self.cor_pelo = cor_pelo
 
 
-class Macaco(Mamifero):
-    pass
+class Ave(Animal):
+    def __init__(self, cor_bico, **kwargs):
+        super().__init__(**kwargs)
+        self.cor_bico = cor_bico
 
 
 class Vaca(Mamifero):
     pass
 
 
-class Herbivoro(Animal):
-    def __init__(self, num_patas):
-        super().__init__(num_patas)
-        self.num_patas = num_patas
-
-
-vaca = Vaca(4)
+vaca = Vaca(num_patas=4,  cor_pelo="branco")
 print(vaca)
+print()
+
+
+class Ornitorrinco(Mamifero, Ave):
+    pass
+
+
+ornitorrinco = Ornitorrinco(num_patas=4, cor_pelo="marrom", cor_bico="preto")
+print(ornitorrinco)
+print()
