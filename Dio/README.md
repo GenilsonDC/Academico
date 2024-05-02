@@ -2,9 +2,7 @@
 
 # Dio 
 
-> ### Como a plataforma agora é paga, nao dei continuidade nos cursos, até o presente momento esta vazio 🗑️
->
-> - ### *Dio*
+
 >
 >   
 
