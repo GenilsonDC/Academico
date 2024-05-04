@@ -1,0 +1,12 @@
+[2024-05-04 22:09:12] Função: 'criarUsuario' executada com argumentos: ([<PessoaFisica: ('Genilson do Carmo', '123')>],) e {}.
+ Retornou: None
+[2024-05-04 22:09:18] Função: 'depositar' executada com argumentos: ([<PessoaFisica: ('Genilson do Carmo', '123')>],) e {}.
+ Retornou: None
+[2024-05-04 22:09:25] Função: 'sacar' executada com argumentos: ([<PessoaFisica: ('Genilson do Carmo', '123')>],) e {}.
+ Retornou: None
+[2024-05-04 22:10:22] Função: 'criarUsuario' executada com argumentos: ([<PessoaFisica: ('Genilson do Carmo', '123')>, <PessoaFisica: ('Fernanda Amorin', '4321')>],) e {}.
+ Retornou: None
+[2024-05-04 22:10:32] Função: 'depositar' executada com argumentos: ([<PessoaFisica: ('Genilson do Carmo', '123')>, <PessoaFisica: ('Fernanda Amorin', '4321')>],) e {}.
+ Retornou: None
+[2024-05-04 22:10:45] Função: 'sacar' executada com argumentos: ([<PessoaFisica: ('Genilson do Carmo', '123')>, <PessoaFisica: ('Fernanda Amorin', '4321')>],) e {}.
+ Retornou: None

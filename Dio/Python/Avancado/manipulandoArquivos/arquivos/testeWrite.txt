@@ -1,0 +1,28 @@
+
+           Saida do arquivo writeFile.py
+           ************************************           
+                       CABEÇALHO
+           ************************************
+
+           Nome; Sobrenome; Operação; Valor
+
+           
+                Saida do arquivo writeFile.py
+           ************************************           
+                       CABEÇALHO
+           ************************************
+
+           Nome; Sobrenome; Operação; Valor
+
+            Nome; Sobrenome; Operação; Valor
+ Nome; Sobrenome; Operação; Valor
+"Nome", "Sobrenome", "Operação", "Valor
+"NomeSobrenomeOperaçãoValorNome Sobrenome Operação Valor
+Nome 
+Sobrenome 
+Operação 
+Valor
+Nome
+Sobrenome 
+Operação 
+Valor
