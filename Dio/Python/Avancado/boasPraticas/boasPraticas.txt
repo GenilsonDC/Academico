@@ -1,0 +1,36 @@
+# PEP 8: é o guia de estilo para a cidificão em Python.
+# Inlcui convenções sobre nomes de variáveis, uso de espaços em branco,
+# comprimento da linha e mauitas outras coisas que ajudam a mantes o código python consistente e elegível
+# https://peps.python.org/pep-0008/
+# *************
+# * PRINCIPAIS *
+# * Usar 4 espaços para identação
+# * Limitar as linhas a 79 caracteres
+# * Nomes de variaveis em snake_case para funções e variáveis
+# * CamelCase para classes
+
+def somar_numeros(argumento_1, argumento_2)
+    pass
+
+class MinhaClasse:
+    def __init__(self):
+        pass
+
+# Ferramentas linter que verifiam o código e _informam_ onde é/são os desvios/erros da guia de estilo:
+# flake8 pip/pipenv install flak8 -->> flak8 meu_script.py
+# Formatadores que segue a filisofia "Formato Unico", _reformando_ todo o arquivo em um estilo consistente.
+# black:  pip/pipenv install black -->> black meu_script.py
+
+
+
+# *** Imports
+import os
+import sys
+#Errado/wrong: import os, sys
+
+#hierarquia
+import csv
+from pathlib import Path
+from typing import Any, Dict, List
+ # _Isort_ é a ferramenta que ordena/classifica as importações e separa em seções.
+ # pip/pipen/poetry install isort -->> isort meu_script.py

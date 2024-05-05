@@ -18,14 +18,14 @@ class ContasIterador:
     def __next__(self):
         try:
             conta = self.contas[self._index]
-            return f'''
+            return f"""
             ===========================================
             =    Agência:-------{conta.agencia}
             =    Conta:---------{conta.numero}
             =    Titular:-------{conta.usuario.nome}
             =    Saldo:---------{conta.saldo:.2f}
             ===========================================
-            '''
+            """
         except IndexError:
             raise StopIteration
         finally:
@@ -95,16 +95,20 @@ class Conta:
     def depositar(self, valor):
         if valor > 0:
             self._saldo += valor
-            print(f'''
+            print(
+                f"""
                     Deposito de R${valor} realizado com sucesso
                     Saldo atual: {self._saldo}
-                    ''')
+                    """
+            )
         else:
-            print(f'''
+            print(
+                f"""
                   Operação cancelada!
                   {valor} não é um valor válido.
                   Digite valores acima de R$0,00
-                  ''')
+                  """
+            )
             return False
 
         return True
@@ -118,17 +122,21 @@ class Conta:
 
         elif valor > 0:
             self._saldo -= valor
-            print(f'''
+            print(
+                f"""
                     Saque de R${valor} realizado com sucesso
                     Saldo atual: {saldo}
-                    ''')
+                    """
+            )
             return True
         else:
-            print(f'''
+            print(
+                f"""
                   Operação cancelada!
                   {valor} não é um valor válido.
                   Digite valores acima de R$0,00
-                  ''')
+                  """
+            )
 
         return False
 
@@ -145,14 +153,19 @@ class ContaCorrente(Conta):
 
     def sacar(self, valor):
         qtddSaques = len(
-            [transacao for transacao in self.historico.transacoes if transacao['tipo']
-                == Saque.__name__]
+            [
+                transacao
+                for transacao in self.historico.transacoes
+                if transacao["tipo"] == Saque.__name__
+            ]
         )
         excedeuLimite = valor > self._limite
         excedeulimiteSaques = qtddSaques >= self._limiteSaques
 
         if excedeuLimite:
-            print("\n\tOperação cancelada!\n\t O valor do valor excedeu o valor limite!")
+            print(
+                "\n\tOperação cancelada!\n\t O valor do valor excedeu o valor limite!"
+            )
 
         elif excedeulimiteSaques:
             print(f"\nOperação cancelada!\n\tLimite de 3 saques diarios atingido!")
@@ -166,13 +179,13 @@ class ContaCorrente(Conta):
         return f"<{self.__class__.__name__}:('{self.agencia}', '{self.numero}', '{self.usuario.nome}')>"
 
     def __str__(self):
-        return f'''
+        return f"""
         ===========================================
         =    Agência:-------{self.agencia}
         =    C/C:-----------{self.numero}
         =    Titular:-------{self.usuario.nome}
         ===========================================
-        '''
+        """
 
 
 class Historico:
@@ -188,13 +201,16 @@ class Historico:
             {
                 "tipo": transacao.__class__.__name__,
                 "valor": transacao.valor,
-                "data": datetime.now(timezone.utc).strftime('%d-%m-%Y %H:%M:%S'),
+                "data": datetime.now(timezone.utc).strftime("%d-%m-%Y %H:%M:%S"),
             }
         )
 
     def gerarRelatorio(self, tipoTransacao=None):
         for transacao in self._transacoes:
-            if tipoTransacao is None or transacao['tipo'].lower() == tipoTransacao.lower():
+            if (
+                tipoTransacao is None
+                or transacao["tipo"].lower() == tipoTransacao.lower()
+            ):
                 yield transacao
 
     def transacoesDoDia(self):
@@ -202,7 +218,8 @@ class Historico:
         transacoes = []
         for transacao in self._transacoes:
             dataTransacao = datetime.strptime(
-                transacao['data'], '%d-%m-%Y %H:%M:%S').date()
+                transacao["data"], "%d-%m-%Y %H:%M:%S"
+            ).date()
             if dataAtual == dataTransacao:
                 transacoes.append(transacao)
         return transacoes
@@ -250,7 +267,7 @@ class Saque(Transacao):
 
 
 def opcoes():
-    opcao = '''
+    opcao = """
                 **** Bem vindo ****
                 Selecione uma opção:
 
@@ -261,17 +278,19 @@ def opcoes():
                 [nu]----Novo usuário
                 [nc]------Nova Conta
                 [ex]------------Sair
-                -->'''
+                -->"""
     return input(opcao)
 
 
 def logTransacao(func):
     def pacote(*args, **kwargs):
         resultado = func(*args, **kwargs)
-        dataHora = datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S')
+        dataHora = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S")
         with open(ROOT_PATH / "log.txt", "a", encoding="utf-8") as arquivoLog:
-            arquivoLog.write(f"[{dataHora}] Função: '{
-                             func.__name__}' executada com argumentos: {args} e {kwargs}.\n Retornou: {resultado}\n")
+            arquivoLog.write(
+                f"[{dataHora}] Função: '{
+                             func.__name__}' executada com argumentos: {args} e {kwargs}.\n Retornou: {resultado}\n"
+            )
             return resultado
 
     return pacote
@@ -345,9 +364,9 @@ def movimentacoes(usuarios):
 
 def listarContas(contas):
     for conta in ContasIterador(contas):
-        saida = f'''
+        saida = f"""
                      {str(conta)}
-        '''
+        """
         print(saida)
 
 
@@ -357,10 +376,12 @@ def criarUsuario(usuarios):
     usuario = filtrarUsuario(cpf, usuarios)
 
     if usuario:
-        print(f'''
+        print(
+            f"""
               Operação cancelada!
               Já esxite um usuario para o cpf: {cpf}
-              ''')
+              """
+        )
         return
     else:
         nome = input("Digite seu nome completo: ")
@@ -368,14 +389,14 @@ def criarUsuario(usuarios):
         endereco = input("Digite seu endereco(rua, bairro, cidade - UF): ")
 
         usuario = PessoaFisica(
-            nome=nome, dataNasci=dataNasci, cpf=cpf, endereco=endereco)
+            nome=nome, dataNasci=dataNasci, cpf=cpf, endereco=endereco
+        )
         usuarios.append(usuario)
         print("\n\t*** Usuario criado com sucesso! ***")
 
 
 def filtrarUsuario(cpf, usuarios):
-    filtrados = [
-        usuario for usuario in usuarios if usuario.cpf == cpf]
+    filtrados = [usuario for usuario in usuarios if usuario.cpf == cpf]
     return filtrados[0] if filtrados else None
 
 
@@ -394,14 +415,17 @@ def criarConta(numConta, usuarios, contas):
     usuario = filtrarUsuario(cpf, usuarios)
 
     if not usuario:
-        print(''' 
+        print(
+            """ 
               \tOperação cancelada!
               \tUsuário não encontrado!
-              \tFaça o cadastro e tente novamente!\n''')
+              \tFaça o cadastro e tente novamente!\n"""
+        )
         return
 
     conta = ContaCorrente.novaConta(
-        usuario=usuario, numero=numConta, limite=500, limiteSaques=50)
+        usuario=usuario, numero=numConta, limite=500, limiteSaques=50
+    )
     contas.append(conta)
     usuario.contas.append(conta)
 
@@ -435,7 +459,7 @@ def main():
             criarConta(numConta, usuarios, contas)
 
         elif opcao == "ex":
-            print('Saindo...')
+            print("Saindo...")
             break
 
         else:

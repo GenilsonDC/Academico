@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "pacotes"
+version = "0.1.0"
+description = "testePoetry"
+authors = ["Genilson do Carmo"]
+license = "mit"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+Django = "^5.0.4"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -18,5 +18,7 @@
 # pip install poetry
 # poetry new myproject
 # cd myproject
+# poetry init
 # poetry add numpy
+# poetry show -t
 # poetry remove numpy
