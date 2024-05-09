@@ -37,6 +37,7 @@ def createTable(cur, connection):
         print("🟢 Tabela criada!\n")
     except psycopg2.Error as createDBError:
         print(f"🛑 Não foi possivel criar a tabela\n ⚠️ {createDBError}\n")
+        connection.rollback()
 
 
 def insertData(cur, connection, nome, idade, email):
@@ -49,6 +50,7 @@ def insertData(cur, connection, nome, idade, email):
         print("🟢 dados inseridos!\n")
     except psycopg2.Error as createError:
         print(f"🛑 Não foi possivel inserir os dados\n ⚠️ {createError}\n")
+        connection.rollback()
 
 
 def insertMany(cur, connection, externalData):
@@ -60,6 +62,7 @@ def insertMany(cur, connection, externalData):
         print("🟢 dados inseridos!\n")
     except psycopg2.Error as createError:
         print(f"🛑 Não foi possivel inserir os dados\n ⚠️ {createError}\n")
+        connection.rollback()
 
 
 def updateData(cur, connection, nome, idade, email, id):
@@ -72,6 +75,7 @@ def updateData(cur, connection, nome, idade, email, id):
 
     except psycopg2.Error as updateError:
         print(f"🛑 Não foi possivel atualizar os dados\n ⚠️ {updateError}\n")
+        connection.rollback()
 
 
 def deleteData(cur, connection, id):
@@ -84,6 +88,7 @@ def deleteData(cur, connection, id):
 
     except psycopg2.Error as deleteError:
         print(f"🛑 Não foi possivel deletar os dados\n ⚠️ {deleteError}\n")
+        connection.rollback()
 
 
 def selectOne(cur, id):
