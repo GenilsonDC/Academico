@@ -1,6 +1,7 @@
 import psycopg2
 import psycopg2.sql
 from psycopg2 import sql
+from psycopg2.extras import DictCursor
 
 db_name = "pythonConnect"
 db_host = "localhost"
@@ -85,13 +86,43 @@ def deleteData(cur, connection, id):
         print(f"🛑 Não foi possivel deletar os dados\n ⚠️ {deleteError}\n")
 
 
+def selectOne(cur, id):
+    cur = connection.cursor(cursor_factory=DictCursor)
+    try:
+        data = (id,)  # COMMA (virgula) when entering only one value
+        cur.execute("SELECT * FROM public.clientes WHERE id=%s", data)
+        return cur.fetchone()
+
+    except psycopg2.Error as selectOneError:
+        print(f"🛑 Não foi possivel retornar os dados\n ⚠️ {selectOneError}\n")
+
+
+def selectAll(cur):
+    try:
+        cur.execute("SELECT * FROM public.clientes ORDER BY nome")
+        return cur.fetchall()
+
+    except psycopg2.Error as selectOneError:
+        print(f"🛑 Não foi possivel retornar os dados\n ⚠️ {selectOneError}\n")
+
+
 # insertData(cur, connection, "Natalia do Carmo", 25, "natalia@email.com")
 # updateData(cur, connection, "Natalia do Carmo", 25, "natalia@email.com", 2)
 # deleteData(cur, connection,  2)
+
+# insertMany(cur, connection, externalData)
+
+cliente = selectOne(cur, 4)
+print(f"\tOlá {cliente["nome"]}\n Bem vindo(a) ao sistema!\n")
+
+# todosClientes = selectAll(cur)
+# for cliente in todosClientes:
+#     print(cliente)
+
+
 externalData = [
     ("João de sá", 23, "joãodesa@email.com"),
     ("Ana de sá", 63, "aninhadesa@email.com"),
     ("Luiz de sá", 33, "lzdesa@email.com"),
     ("Beatriz de sá", 26, "biadesa@email.com"),
 ]
-insertMany(cur, connection, externalData)
