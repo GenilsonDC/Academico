@@ -6,9 +6,7 @@
 >
 >   
 
-
-
- ![GenilsonDC logo](Documentation/roundOrangeLogo.png)
+ ![dio skilss](Documentation/diohbl.png)
 
 
 
