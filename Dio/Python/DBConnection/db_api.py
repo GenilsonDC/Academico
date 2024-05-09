@@ -43,7 +43,18 @@ def insertData(cur, connection, nome, idade, email):
         data = (nome, idade, email)
         cur.execute(
             # f"INSERT INTO public.clientes (nome, idade, email) VALUES{data};") 🛑 Risco de injeção
-            "INSERT INTO public.clientes (nome, idade, email) VALUES (%s,%s,%s);")
+            "INSERT INTO public.clientes (nome, idade, email) VALUES (%s,%s,%s);", data)
+        connection.commit()
+        print("🟢 dados inseridos!\n")
+    except psycopg2.Error as createError:
+        print(f"🛑 Não foi possivel inserir os dados\n ⚠️ {createError}\n")
+
+
+def insertMany(cur, connection, externalData):
+    try:
+        data = (externalData)
+        cur.executemany(
+            "INSERT INTO public.clientes (nome, idade, email) VALUES (%s,%s,%s);", externalData)
         connection.commit()
         print("🟢 dados inseridos!\n")
     except psycopg2.Error as createError:
@@ -62,4 +73,25 @@ def updateData(cur, connection, nome, idade, email, id):
         print(f"🛑 Não foi possivel atualizar os dados\n ⚠️ {updateError}\n")
 
 
-updateData(cur, connection, "Natalia do Carmo", 25, "natalia@email.com", 2)
+def deleteData(cur, connection, id):
+    try:
+        data = (id,)  # COMMA (virgula) when entering only one value
+        cur.execute(
+            "DELETE FROM public.clientes WHERE id=%s", data)
+        connection.commit()
+        print("🟢 dados deletados!\n")
+
+    except psycopg2.Error as deleteError:
+        print(f"🛑 Não foi possivel deletar os dados\n ⚠️ {deleteError}\n")
+
+
+# insertData(cur, connection, "Natalia do Carmo", 25, "natalia@email.com")
+# updateData(cur, connection, "Natalia do Carmo", 25, "natalia@email.com", 2)
+# deleteData(cur, connection,  2)
+externalData = [
+    ("João de sá", 23, "joãodesa@email.com"),
+    ("Ana de sá", 63, "aninhadesa@email.com"),
+    ("Luiz de sá", 33, "lzdesa@email.com"),
+    ("Beatriz de sá", 26, "biadesa@email.com"),
+]
+insertMany(cur, connection, externalData)
