@@ -75,3 +75,25 @@ SET rua = SUBSTRING_INDEX(SUBSTRING_INDEX(endereco, ',', 1), ',', -1),
 	numero = SUBSTRING_INDEX(SUBSTRING_INDEX(endereco, ',', 2), ',', -1),
 	cidade = SUBSTRING_INDEX(SUBSTRING_INDEX(endereco, ',', 3), ',', -1),
 	estado = SUBSTRING_INDEX(endereco, ',', -1);
+
+**consultas aninhadas**
+SELECT * FROM destinos
+WHERE id NOT IN(SELECT id_destino FROM reservas)
+
+SELECT nome, (SELECT COUNT(*) FROM reservas WHERE id_usuario = usuarios.id) as total_reservas from usuarios
+![image-20240507205931191](C:\Git\Academico\Dio\MariaDB\image-20240507205931191.png)
+
+**Calculando e veficando a maior  idade**
+SELECT MAX(TIMESTAMPDIFF(YEAR, data_nascimento, CURRENT_DATE())) AS Maior_idade
+FROM usuarios
+
+**Índices** No MariaDB (e MySQL), índices são fundamentais para melhorar o desempenho de consultas em bancos de dados. Eles ajudam a acelerar a recuperação de dados, permitindo que o banco de dados localize registros mais rapidamente.
+**Índice Simples em uma Coluna:** Este comando cria um índice simples em uma única coluna.
+*CREATE INDEX index_name ON table_name(column_name)*;
+**Índice em Múltiplas Colunas:** Você também pode criar índices em múltiplas colunas para melhorar o desempenho de consultas que envolvem várias colunas.
+*CREATE INDEX index_name ON table_name(column1, column2, ...)*;
+**Índice Único:** Este comando cria um índice único, garantindo que os valores na coluna (ou conjunto de colunas) sejam únicos. *CREATE UNIQUE INDEX index_name ON table_name(column_name*);
+**Índice de Texto Completo (Full-Text Index):** Para pesquisas de texto completo em colunas de texto longo, como `TEXT` ou `VARCHAR`, você pode criar índices de texto completo para melhorar o desempenho de consultas de pesquisa de texto. *CREATE FULLTEXT INDEX index_name ON table_name(column_name)*;
+
+CREATE INDEX idx_nome ON usuarios(nome)
+EXPLAIN SELECT * FROM usuarios WHERE nome = "Genilson"
