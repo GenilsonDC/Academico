@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+  db:
+    image: postgres:15.7
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: 00000
+      POSTGRES_USER: postgres
+      POSTGRES_DB: pythonConnect
+    ports:
+        -  "5432:5432"
