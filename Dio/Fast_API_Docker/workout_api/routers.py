@@ -1,8 +1,8 @@
-# from fastapi import APIRouter
+from fastapi import APIRouter
 
-# from workout_api.cliente.controller import router as clientes
-# from workout_api.tipoCliente.controller import router as tipoCliente
+from workout_api.Atleta.controller import router as atleta
+from workout_api.Categorias.controller import router as catagorias
 
-# api_router = APIRouter()
-# api_router.include_router(clientes, prefix="/clientes", tags=["clientes"])
-# api_router.include_router(tipoCliente, prefix="/tipoCliente", tags=["tipoCliente"])
+api_router = APIRouter()
+api_router.include_router(atleta, prefix="/atletas", tags=["atletas"])
+api_router.include_router(catagorias, prefix="/catagorias", tags=["catagorias"])

@@ -7,7 +7,11 @@ from sqlalchemy.ext.asyncio import async_engine_from_config
 
 from alembic import context
 from workout_api.contrib.model import BaseModel
-from workout_api.contrib.repository.model import *
+from workout_api.contrib.repository.model import (
+    AtletaModel,
+    CategoriaModel,
+    CentroTreinamentoModel,
+)
 
 config = context.config
 

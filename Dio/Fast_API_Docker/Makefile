@@ -1,9 +1,12 @@
 run:
 	@uvicorn workout_api.main:app --reload
-	# @uvicorn clientes_api.main:app --reload
+
+.PHONY: create-migrations upgrade
 
 create-migrations:
-	@PYTHONPATH=$PYTHONPATH:$(pwd) alembic revision --autogenerate -m $(d)
+	@alembic upgrade head
+	@alembic revision --autogenerate -m "$(d)"
+	@alembic upgrade head
 
-run-migrations:
-	@PYTHONPATH=$PYTHONPATH:$(pwd) alembic upgrade head
+upgrade:
+	@alembic upgrade head
