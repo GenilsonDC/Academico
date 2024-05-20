@@ -81,24 +81,7 @@ async def update(id: UUID4, db_session: DatabaseDependency, atleta_in: AtletaUpd
            status_code=status.HTTP_404_NOT_FOUND, detail=f"Atleta não encontrado para o id: {id}\n"
         )
 
-    update_data = atleta_in.model_dump(exclude_unset=True)
-    if "categoria" in update_data:
-        nome_categoria = update_data.pop("categoria").nome
-        categoria = (await db_session.execute(select(CategoriaModel).filter_by(nome=nome_categoria))).scalars().first()
-        if not categoria:
-            raise HTTPException(
-                status_code=status.HTTP_400_BAD_REQUEST, detail=f"Categoria {nome_categoria} não encontrada\n"
-            )
-        atleta.categoria_id = categoria.pk_id
-
-    if "centro_treinamento" in update_data:
-        nome_ct = update_data.pop("centro_treinamento").nome
-        centro_treinamento = (await db_session.execute(select(CentroTreinamentoModel).filter_by(nome=nome_ct))).scalars().first()
-        if not centro_treinamento:
-            raise HTTPException(
-                status_code=status.HTTP_400_BAD_REQUEST, detail=f"Centro de treinamento {nome_ct} não encontrado\n"
-            )
-        atleta.centro_treinamento_id = centro_treinamento.pk_id
+    update_data = atleta_in.model_dump(exclude_unset=True)    
 
     for key, value in update_data.items():
         setattr(atleta, key, value)
