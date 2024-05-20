@@ -12,7 +12,6 @@ async_section = sessionmaker(
     expire_on_commit=False,
 )
 
-
 async def get_session() -> AsyncGenerator:
     async with async_section() as session:
         yield session

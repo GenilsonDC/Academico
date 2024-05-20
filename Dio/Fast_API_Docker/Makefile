@@ -4,9 +4,8 @@ run:
 .PHONY: create-migrations upgrade
 
 create-migrations:
-	@alembic upgrade head
-	@alembic revision --autogenerate -m "$(d)"
-	@alembic upgrade head
+	@PYTHONPATH=$(pwd) alembic revision --autogenerate -m "$(d)"
+	@PYTHONPATH=$(pwd) alembic upgrade head
 
 upgrade:
-	@alembic upgrade head
+	@PYTHONPATH=$(pwd) alembic upgrade head

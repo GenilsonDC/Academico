@@ -1,30 +1,40 @@
 from typing import Annotated
 
-from pydantic import Field, PositiveFloat
-from sqlalchemy import Integer, String
+from pydantic import UUID4, Field, PositiveFloat
 
-from workout_api.contrib.schemas import BaseSchema
+from workout_api.Categorias.schema import Categoria
+from workout_api.Centro_Treinamento.schema import CentroTreinamentoAtleta
+from workout_api.contrib.schemas import BaseSchema, OutMixIn
 
 
 class Atleta(BaseSchema):
 
     nome: Annotated[
-        String,
-        Field(description="Nome do Atleta", example="Genilson do Carmo", max_length=90),
+        str,
+        Field(
+            description="Nome do Atleta", exampless="Genilson do Carmo", max_length=90
+        ),
     ]
     cpf: Annotated[
-        Integer,
-        Field(description="CPF do Atleta", example="123.321.321-44", max_length=11),
+        str,
+        Field(description="CPF do Atleta", examples="123.321.321-44", max_length=11),
     ]
     idade: Annotated[
-        Integer, Field(description="Idade do Atleta", example="32", max_length=3)
+        int, Field(description="Idade do Atleta", examples="32", max_length=3)
     ]
     peso: Annotated[
-        PositiveFloat, Field(description="Peso do Atleta", example="92", max_length=3)
+        PositiveFloat, Field(description="Peso do Atleta", examples="92", max_length=3)
     ]
     altura: Annotated[
-        PositiveFloat, Field(description="Altura do Atleta", example="1.93")
+        PositiveFloat, Field(description="Altura do Atleta", examples="1.93")
     ]
     sexo: Annotated[
-        String, Field(description="Sexo do Atleta", example="F", max_length=1)
+        str, Field(description="Sexo do Atleta", examples="F", max_length=1)
     ]
+    categoria: Annotated[Categoria, Field(description="Categoria do treino")]
+    centro_treinamento: Annotated[CentroTreinamentoAtleta, Field(description="Centro de Treinamento do atleta")]
+
+
+class AtletaOut(Atleta, OutMixIn):
+    pass
+    # id: Annotated[UUID4, Field(description="Identificador do Atleta")]
