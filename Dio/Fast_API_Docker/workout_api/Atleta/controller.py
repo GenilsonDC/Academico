@@ -95,3 +95,15 @@ async def update(id: UUID4, db_session: DatabaseDependency, atleta_in: AtletaUpd
         )
     
     return AtletaOut.model_validate(atleta)
+
+@router.delete(path="/{id}", summary="Deletar Atleta", status_code=status.HTTP_204_NO_CONTENT)
+async def get(id: UUID4, db_session: DatabaseDependency) -> None:
+    atleta= (await db_session.execute(select(AtletaModel).filter_by(id=id))).scalars().first()
+
+    if not atleta:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=f"Atleta não encontrado para o id: {id}"
+        )
+    await db_session.delete(atleta)
+    await db_session.commit()
