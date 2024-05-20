@@ -9,7 +9,7 @@ from workout_api.contrib.dependencies import DatabaseDependency
 router = APIRouter()
 
 
-@router.post("/",
+@router.post(path="/",
     summary="Criar um novo Centro de Treinamento",
     status_code=status.HTTP_201_CREATED,
     response_model=CentroTreinamentoOut,
@@ -25,7 +25,7 @@ async def post(
     return centro_treinamento_out
 
 
-@router.get("/",
+@router.get(path="/",
     summary="Consultar todos os Centros de treinamento",
     status_code=status.HTTP_200_OK,
     response_model=list[CentroTreinamentoOut],
@@ -34,7 +34,7 @@ async def query(db_session: DatabaseDependency) -> list[CentroTreinamentoOut]:
     centro_treinamentos: list[CentroTreinamentoOut] = (await db_session.execute(select(CentroTreinamentoModel))).scalars().all()
     return centro_treinamentos
 
-@router.get("/{id}",
+@router.get(path="/{id}",
     summary="Consulta Centro treinamento por id",
     status_code=status.HTTP_200_OK,
     response_model= CentroTreinamentoOut,

@@ -11,7 +11,7 @@ from workout_api.contrib.dependencies import DatabaseDependency
 router = APIRouter()
 
 
-@router.post("/",
+@router.post(path="/",
     summary="Criar nova Categoria",
     status_code=status.HTTP_201_CREATED,
     response_model=CategoriaOut,
@@ -27,7 +27,7 @@ async def post(
     return categoria_out
 
 
-@router.get("/",
+@router.get(path="/",
     summary="Consultar todas as Categorias",
     status_code=status.HTTP_200_OK,
     response_model=list[CategoriaOut],
@@ -36,7 +36,7 @@ async def query(db_session: DatabaseDependency) -> list[CategoriaOut]:
     categorias: list[CategoriaOut] = (await db_session.execute(select(CategoriaModel))).scalars().all()
     return categorias
 
-@router.get("/{id}",
+@router.get(path="/{id}",
     summary="Consulta Categorias por id",
     status_code=status.HTTP_200_OK,
     response_model= CategoriaOut,
