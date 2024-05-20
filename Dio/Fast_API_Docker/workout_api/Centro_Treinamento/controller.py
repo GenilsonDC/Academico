@@ -44,7 +44,7 @@ async def query(id:UUID4,db_session: DatabaseDependency) -> CentroTreinamentoOut
 
     if not centro_treinamento:
         raise HTTPException(
-           status_code=status.HTTP_404_NOT_FOUND, details=f"Centro de treinamento não encontrado para o id: {id}\n"
+           status_code=status.HTTP_404_NOT_FOUND, detail=f"Centro de treinamento não encontrado para o id: {id}\n"
         )
     
     return centro_treinamento

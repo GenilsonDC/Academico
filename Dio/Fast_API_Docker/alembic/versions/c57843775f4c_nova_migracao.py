@@ -49,7 +49,7 @@ def upgrade() -> None:
     sa.Column('centro_treinamento_id', sa.Integer(), nullable=False),
     sa.Column('id', sa.UUID(), nullable=False),
     sa.ForeignKeyConstraint(['categoria_id'], ['categorias.pk_id'], ),
-    sa.ForeignKeyConstraint(['centro_treinamento_id'], ['centros_treinamento.pk_id'], ),
+    sa.ForeignKeyConstraint(['centro_treinamento_id'], ['centro_treinamento.pk_id'], ),
     sa.PrimaryKeyConstraint('pk_id'),
     sa.UniqueConstraint('cpf')
     )

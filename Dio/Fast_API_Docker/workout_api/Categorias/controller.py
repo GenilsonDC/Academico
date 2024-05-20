@@ -46,7 +46,7 @@ async def query(id:UUID4,db_session: DatabaseDependency) -> CategoriaOut:
 
     if not categoria:
         raise HTTPException(
-           status_code=status.HTTP_404_NOT_FOUND, details=f"Categoria não encontrada para o id: {id}\n"
+           status_code=status.HTTP_404_NOT_FOUND, detail=f"Categoria não encontrada para o id: {id}\n"
         )
     
     return categoria
