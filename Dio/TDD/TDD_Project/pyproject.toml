@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "tdd-project"
+version = "0.1.0"
+description = "Primeiro projeto com Desenvolvimento Orientado a Testes TDD"
+authors = ["Genilson do Carmo <genilsondocarmosilva@hotmail.com>"]
+license = "mit"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = "^0.111.0"
+uvicorn = "^0.29.0"
+pydantic = "^2.7.1"
+pydantic-settings = "^2.2.1"
+motor = "^3.4.0"
+pytest = "^8.2.1"
+pytest-asyncio = "^0.23.7"
+pre-commit = "^3.7.1"
+SQLAlchemy = "^2.0.30"
+asyncpg = "^0.29.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
