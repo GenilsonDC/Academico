@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  db:
+    image: "bitnami/mongodb:latest"
+    ports:
+      - "27017:27017"
+    restart: on-failure
+    environment:
+      - MONGODB_ADVERTISED_HOSTNAME=localhost
+      - ALLOW_EMPTY_PASSWORD=yes
