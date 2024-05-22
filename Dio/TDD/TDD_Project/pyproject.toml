@@ -1,25 +1,32 @@
 [tool.poetry]
 name = "store"
-version = "0.1.0"
-description = "Primeiro projeto com Desenvolvimento Orientado a Testes TDD"
-authors = ["Genilson do Carmo <genilsondocarmosilva@hotmail.com>"]
-license = "mit"
+version = "0.0.1"
+description = ""
+authors = ["Genilson do Carmo <genilsondocarmosilva@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.12"
-fastapi = "^0.111.0"
-uvicorn = "^0.29.0"
-pydantic = "^2.7.1"
-pydantic-settings = "^2.2.1"
-motor = "^3.4.0"
-pytest = "^8.2.1"
-pytest-asyncio = "^0.23.7"
-pre-commit = "^3.7.1"
-SQLAlchemy = "^2.0.30"
-asyncpg = "^0.29.0"
+fastapi = "^0.104.1"
+uvicorn = "^0.24.0.post1"
+pydantic = "^2.5.1"
+pydantic-settings = "^2.1.0"
+motor = "^3.3.1"
+pytest = "^7.4.3"
+pytest-asyncio = "^0.21.1"
+pre-commit = "^3.5.0"
+httpx = "^0.25.1"
 requests = "^2.32.2"
 
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+addopts = [
+  "--strict-config",
+  "--strict-markers",
+  "--ignore=docs_src",
+]
+xfail_strict = true
+junit_family = "xunit2"
 
 [build-system]
 requires = ["poetry-core"]
